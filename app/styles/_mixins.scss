@@ -1,0 +1,240 @@
+@use 'sass:map';
+
+$columns: 4;
+$row: 18rem;
+$gap: 2.4rem;
+$breakpoints: (
+  xl: 87.5em,
+  lg: 75em,
+  md: 65em,
+  sm: 48em,
+  xs: 36em,
+  xxs: 20em,
+);
+
+// @mixin create-selectors($breakpoint: null) {
+//   $infix: if($breakpoint == null, '', '_#{$breakpoint}');
+
+//   @for $i from 1 through $columns {
+//     .col#{$infix}_#{$i} {
+//       grid-column-end: span $i;
+//     }
+//     .col_offset#{$infix}_#{$i} {
+//       grid-column-start: $i;
+//     }
+//     .row#{$infix}_#{$i} {
+//       grid-row-end: span $i;
+//     }
+//     .row_offset#{$infix}_#{$i} {
+//       grid-row-start: $i;
+//     }
+//   }
+// }
+
+// .grid {
+//   display: grid;
+//   grid-template-columns: repeat($columns, 1fr);
+//   // grid-template-rows: minmax($row, auto);
+//   grid-auto-flow: dense;
+//   grid-gap: $gap;
+//   gap: $gap;
+//   // margin-bottom: 2.4rem;
+// }
+
+// @include create-selectors;
+
+// @each $breakpoint, $width in $breakpoints {
+//   @media (max-width: $width) {
+//     @include create-selectors($breakpoint);
+//   }
+// }
+
+@mixin display-grid {
+  display: -ms-grid;
+  display: grid;
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == smaller-mobile {
+    @media only screen and (max-width: 20em) {
+      @content;
+    } //320px
+  }
+  @if $breakpoint == mobile {
+    @media only screen and (max-width: 36em) {
+      @content;
+    } //576px
+  }
+  @if $breakpoint == tablet {
+    @media only screen and (max-width: 48em) {
+      @content;
+    } //768px
+  }
+  @if $breakpoint == desktop {
+    @media only screen and (max-width: 62em) {
+      @content;
+    } //992px
+  }
+  @if $breakpoint == large-desktop {
+    @media only screen and (min-width: 75em) {
+      @content;
+    } //1200px
+  }
+  @if $breakpoint == larger-desktop {
+    @media only screen and (min-width: 87.5em) {
+      @content;
+    } //1400px
+  }
+}
+
+$space-values: (
+  0: 0,
+  1: 0.8rem,
+  // 4px
+  2: 1.6rem,
+  // 8px
+  3: 2.4rem,
+  // 16px
+  4: 3.2rem,
+  // 24px
+  5: 4rem,
+  // 48px
+);
+
+@each $padding, $value in $space-values {
+  @if $padding == 0 {
+    .p_0 {
+      padding: $value;
+    }
+  } @else {
+    .p_#{$padding} {
+      padding: $value;
+    }
+    @each $breakpoint, $width in $breakpoints {
+      @if $width != null {
+        .#{$breakpoint}_#{$padding} {
+          @media (max-width: $width) {
+            padding: $value;
+          }
+        }
+      }
+    }
+
+    .pt_#{$padding} {
+      padding-top: $value;
+    }
+    @each $breakpoint, $width in $breakpoints {
+      @if $width != null {
+        .#{$breakpoint}_pt_#{$padding} {
+          @media (max-width: $width) {
+            padding-top: $value;
+          }
+        }
+      }
+    }
+    .pr_#{$padding} {
+      padding-right: $value;
+    }
+    @each $breakpoint, $width in $breakpoints {
+      @if $width != null {
+        .#{$breakpoint}_pr_#{$padding} {
+          @media (max-width: $width) {
+            padding-right: $value;
+          }
+        }
+      }
+    }
+    .pb_#{$padding} {
+      padding-bottom: $value;
+    }
+    @each $breakpoint, $width in $breakpoints {
+      @if $width != null {
+        .#{$breakpoint}_pb_#{$padding} {
+          @media (max-width: $width) {
+            padding-bottom: $value;
+          }
+        }
+      }
+    }
+    .pl_#{$padding} {
+      padding-left: $value;
+    }
+    @each $breakpoint, $width in $breakpoints {
+      @if $width != null {
+        .#{$breakpoint}_pl_#{$padding} {
+          @media (max-width: $width) {
+            padding-left: $value;
+          }
+        }
+      }
+    }
+  }
+}
+@each $margin, $value in $space-values {
+  @if $margin == 0 {
+    .m_0 {
+      margin: $value;
+    }
+  } @else {
+    .m_#{$margin} {
+      margin: $value;
+    }
+    @each $breakpoint, $width in $breakpoints {
+      @if $width != null {
+        .#{$breakpoint}_#{$margin} {
+          @media (max-width: $width) {
+            margin: $value;
+          }
+        }
+      }
+    }
+    .mt_#{$margin} {
+      margin-top: $value;
+    }
+    @each $breakpoint, $width in $breakpoints {
+      @if $width != null {
+        .#{$breakpoint}_mt_#{$margin} {
+          @media (max-width: $width) {
+            margin-top: $value;
+          }
+        }
+      }
+    }
+    .mr_#{$margin} {
+      margin-right: $value;
+    }
+    @each $breakpoint, $width in $breakpoints {
+      @if $width != null {
+        .#{$breakpoint}_mr_#{$margin} {
+          @media (max-width: $width) {
+            margin-right: $value;
+          }
+        }
+      }
+    }
+    .mb_#{$margin} {
+      margin-bottom: $value;
+    }
+    @each $breakpoint, $width in $breakpoints {
+      @if $width != null {
+        .#{$breakpoint}_mb_#{$margin} {
+          @media (max-width: $width) {
+            margin-bottom: $value;
+          }
+        }
+      }
+    }
+    .ml_#{$margin} {
+      margin-left: $value;
+    }
+    @each $breakpoint, $width in $breakpoints {
+      @if $width != null {
+        .#{$breakpoint}_ml_#{$margin} {
+          @media (max-width: $width) {
+            margin-left: $value;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.component_1 {
+  grid-column: 1/ -1;
+  grid-row: span 1;
+  display: grid;
+  gap: 2.4rem;
+  grid-template-columns: repeat(auto-fit, minmax(33rem, 1fr));
+  @include respond(larger-desktop) {
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+  }
+}
+// .component_1 {
+//   grid-column: span 1;
+//   grid-row: span 1;
+// }
+.component_7 {
+  // grid-column: span 2;
+  // grid-row: span 2;
+}

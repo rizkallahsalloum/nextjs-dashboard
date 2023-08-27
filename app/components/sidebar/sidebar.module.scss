@@ -1,0 +1,156 @@
+@import '../../styles/helpers';
+@import '../../styles/mixins';
+
+.sidebar {
+  width: 100%;
+  height: 100vh;
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: var(--clr-white);
+  border-radius: 50px 0px 0px 50px;
+  padding: 0 0 0 3.6rem;
+  @include respond(desktop) {
+    display: flex;
+    align-items: center !important;
+    padding: 0;
+    figcaption {
+      display: none;
+    }
+  }
+  @include respond(mobile) {
+    position: absolute;
+    left: -150em;
+    transition: all 1s ease;
+    z-index: 100;
+    &__open {
+      position: absolute;
+      left: 0em;
+      padding-top: 8rem;
+      padding-left: 5rem;
+      transition: all 1s ease;
+      z-index: 100;
+      display: flex;
+      align-items: flex-start !important;
+      justify-content: flex-start;
+      figcaption {
+        display: block;
+      }
+    }
+  }
+
+  .nav__active {
+    position: absolute;
+    left: 0em;
+    transition: all 1s ease;
+    z-index: 100;
+  }
+  &__nav {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    @extend %display__flex_column;
+    // padding-top: 11.5rem;
+    a {
+      text-decoration: none;
+    }
+
+    a:hover {
+      width: 15em;
+      color: var(--clr-text);
+      background: var(--clr-light--gray);
+      border-radius: 10px;
+      text-decoration: none;
+      transition: ease-in-out 0.2s;
+      @include respond(desktop) {
+        width: auto;
+        background: transparent;
+      }
+    }
+    @include respond(mobile) {
+      padding-top: 5rem;
+    }
+  }
+  .sidebar__nav_link {
+    padding: 0.8rem 3.3rem;
+    text-decoration: none;
+    @include respond(desktop) {
+      padding: 2rem 3.3rem;
+    }
+    @include respond(mobile) {
+      padding: 0.8rem 3.3rem;
+    }
+  }
+  &__nav_bottom {
+    @extend %display__flex_column;
+    a:hover {
+      filter: brightness(0) saturate(100%) invert(69%) sepia(4%) saturate(3836%)
+        hue-rotate(94deg) brightness(93%) contrast(79%);
+    }
+    @include respond(mobile) {
+      padding-top: 3rem;
+    }
+  }
+  .sidebar__separator {
+    border: none;
+    border-top: 2px solid #f6f9ff;
+    text-align: center;
+    max-width: 15em;
+    position: relative;
+    bottom: -8rem;
+    @include respond(mobile) {
+      width: 20em;
+      bottom: -2rem;
+    }
+  }
+
+  figure {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    line-height: 4rem;
+    gap: 0.9rem;
+  }
+  .logo {
+    &__mobile {
+      display: none;
+    }
+    @include respond(desktop) {
+      &__desktop {
+        display: none;
+      }
+      &__mobile {
+        display: flex;
+      }
+    }
+    @include respond(mobile) {
+      &__mobile {
+        display: none;
+      }
+      &__desktop {
+        display: block;
+      }
+    }
+  }
+}
+.sidebar__menu_btn {
+  visibility: hidden;
+  @include respond(mobile) {
+    width: 56px;
+    height: 56px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: visible;
+    right: 3rem;
+    top: 6.5rem;
+    border: none;
+    cursor: pointer;
+    background: var(--clr-text--darker);
+    border-radius: 50%;
+    z-index: 200;
+  }
+}

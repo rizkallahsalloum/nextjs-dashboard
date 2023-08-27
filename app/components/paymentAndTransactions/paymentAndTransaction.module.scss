@@ -1,0 +1,31 @@
+@import '../../styles/mixins';
+@import '../../styles/helpers';
+
+.payment__transactions {
+  @extend %component;
+  // @extend %grid__container;
+  order: 2;
+  @include respond(mobile) {
+    // grid-column: 1/ -1;
+  }
+  .payment__transactions_list {
+    @extend %display__flex_column;
+    margin-top: calc(var(--spacer) * 5);
+  }
+  .payment__transactions_list_item {
+    width: 100%;
+    padding-bottom: 2.4rem;
+    color: var(--clr-text--darker--op);
+
+    @extend %display__flex;
+    figure {
+      @extend %display__flex;
+      position: relative;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .payment__transactions_list_item_number {
+      @extend %numbers;
+    }
+  }
+}

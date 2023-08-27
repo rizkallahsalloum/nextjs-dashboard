@@ -1,0 +1,15 @@
+.date {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 0.2rem solid #e2e1e3;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  color: var(--clr-text);
+
+  .calendar__icon {
+    margin-right: 0.5rem;
+    width: 20px;
+    height: 20px;
+  }
+}

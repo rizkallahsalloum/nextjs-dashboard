@@ -1,0 +1,6 @@
+@import '../../styles/mixins';
+@import '../../styles/helpers';
+
+.completed__tasks {
+  @extend %component;
+}

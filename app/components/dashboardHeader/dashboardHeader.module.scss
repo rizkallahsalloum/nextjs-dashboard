@@ -1,0 +1,137 @@
+@import '../../styles/mixins';
+@import '../../styles/helpers';
+
+.header {
+  grid-column: 1 / -1;
+  width: 100%;
+  height: 10rem;
+  margin-top: 0.5rem;
+  @include respond(tablet) {
+    gap: calc(var(--spacer) * 3);
+    height: 15rem;
+  }
+
+  &__utils {
+    width: 70%;
+    @include respond(tablet) {
+      width: 100%;
+      flex-direction: row-reverse;
+      flex-wrap: wrap;
+      margin-left: auto;
+    }
+    &_search {
+      margin-left: auto;
+      width: 40%;
+      @include respond(tablet) {
+        margin-right: 0;
+        width: 100%;
+        order: 2;
+      }
+      input {
+        width: 100%;
+        height: 5rem;
+        padding-block: 1.5rem;
+        text-indent: 4.5rem;
+        background-color: #e8effc;
+      }
+      ::placeholder {
+        font-family: 'Outfit';
+        line-height: 3;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 1.6rem;
+        color: #1f3f49;
+        opacity: 0.5;
+      }
+      &_bar {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+      .icon {
+        position: absolute;
+        left: 2rem;
+      }
+    }
+    &_user_info {
+      @include respond(tablet) {
+        justify-content: flex-end;
+        // margin-right: 8rem;
+        order: 1;
+      }
+      display: flex;
+      gap: 1.6rem;
+      align-items: flex-start;
+      justify-content: flex-end;
+      flex: none;
+      .user_info_image {
+        img {
+          width: 5rem;
+          height: 5rem;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+      .user__info_notification {
+        background-color: var(--dark-gray);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        position: relative;
+        &_icon {
+          position: absolute;
+          top: 0.2rem;
+          right: 0.3rem;
+          display: block;
+          border-radius: 50%;
+          width: 10px;
+          height: 10px;
+          background: #ff1717;
+          box-shadow: 0px 2px 4px rgba(250, 37, 37, 0.26);
+        }
+        .bell_icon {
+          width: 16px;
+          height: 21px;
+          position: absolute;
+        }
+      }
+    }
+  }
+
+  .header__info_welcome {
+    @include respond(mobile) {
+      // padding: calc(var(--spacer) * 1) 0;
+    }
+    h1 {
+      font-size: 3.4rem;
+    }
+  }
+  .header__tabs {
+    button {
+      @extend %transparent__button;
+    }
+  }
+}
+
+.sidebar__menu_btn {
+  visibility: hidden;
+  display: none;
+  @include respond(mobile) {
+    width: 5rem;
+    height: 5rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: visible;
+    border: none;
+    cursor: pointer;
+    background: var(--clr-text--darker);
+    border-radius: 50%;
+    z-index: 200;
+  }
+}
