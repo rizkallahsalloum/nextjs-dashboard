@@ -1,8 +1,4 @@
 import UserCards from './components/userCards/UserCards';
-import PaymentAndTransactions from './components/paymentAndTransactions/PaymentAndTransactions';
-
-import Featured from './components/featured/Featured';
-import Chart from './components/chart/Chart';
 
 import CompletedTasks from './components/completedTasks/CompletedTasks';
 
@@ -11,8 +7,12 @@ import {
   totalProjectsCard,
   totalTasksCard,
   totalClientsCard,
+  dataLineChart,
+  ClientsRequests,
 } from './data';
-
+import LineCharts from './components/lineCharts/LineCharts';
+import CustomTooltip from './components/customTooltip/CustomTooltip';
+import ClientsRequestsTable from './clients/ClientsRequestsTable';
 export default function HomePage() {
   return (
     <section className="content">
@@ -25,18 +25,25 @@ export default function HomePage() {
         </div>
         <div className="component_3">
           <CompletedTasks />
+          {/* <CustomTooltip text="Hover over me for a tooltip">
+            <button>Hover Me</button>
+          </CustomTooltip> */}
         </div>
 
         <div className="component_4">
-          <PaymentAndTransactions />
+          {/* <PaymentAndTransactions /> */}
+          <LineCharts {...dataLineChart} />
         </div>
-
+        <div className="component_7">
+          <ClientsRequestsTable data={ClientsRequests} pageSize={4} />
+        </div>
+        {/*
         <div className="component_7">
           <Featured />
         </div>
         <div className="component_8">
           <Chart />
-        </div>
+        </div> */}
       </div>
     </section>
   );

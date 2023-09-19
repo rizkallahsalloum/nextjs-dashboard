@@ -1,8 +1,5 @@
-@import '../styles/helpers';
-@import '../styles/mixins';
-.clients {
-}
-
+@import '../../styles/helpers';
+@import '../../styles/mixins';
 .table {
   @extend %component;
   @extend %display__flex;
@@ -14,12 +11,11 @@
     position: absolute;
     width: 100%;
     left: 0;
-    top: 8.3rem;
+    top: 8rem;
     border-top: 1px solid var(--clr-main--bg);
   }
   &__header {
     margin-bottom: 3rem;
-    margin-top: 1rem;
     width: 100%;
     @extend %display__flex;
     @include respond(desktop) {
@@ -162,9 +158,6 @@
     border-bottom: 1px solid var(--clr-main--bg);
     padding: 0.35em;
   }
-  table tr:hover {
-    background-color: #f7f7f7;
-  }
 
   table th,
   table td {
@@ -234,29 +227,4 @@
       border-bottom: 0;
     }
   }
-}
-.client__details_btn {
-  text-decoration: none;
-  &:hover {
-    text-decoration: none;
-    color: var(--clr-primary);
-    transition: 0.2s ease-out 0.2s;
-  }
-}
-.client__details_btn::after {
-  content: '';
-  background-image: url('/arrow-right.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: inline-block;
-  width: 1.5rem;
-  height: 1.5rem;
-  position: relative;
-  left: 0.5rem;
-  top: 0.2rem;
-}
-.client__details_btn:hover::after {
-  transition: 0.2s ease-out 0.2s;
-  filter: brightness(0) saturate(100%) invert(68%) sepia(49%) saturate(297%)
-    hue-rotate(92deg) brightness(85%) contrast(83%);
 }

@@ -1,3 +1,4 @@
+import ClientsRequests from '../clients/ClientsRequestsTable';
 import styles from './tasks.module.scss';
 
 export default function TasksPage() {

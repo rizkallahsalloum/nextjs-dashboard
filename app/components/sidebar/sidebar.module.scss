@@ -9,12 +9,17 @@
   flex-direction: column;
   justify-content: space-around;
   background-color: var(--clr-white);
-  border-radius: 50px 0px 0px 50px;
   padding: 0 0 0 3.6rem;
+
+  height: 100vh;
+  z-index: 300;
+  position: sticky;
+  top: 0px;
   @include respond(desktop) {
     display: flex;
     align-items: center !important;
     padding: 0;
+
     figcaption {
       display: none;
     }
@@ -136,7 +141,7 @@
   }
 }
 .sidebar__menu_btn {
-  visibility: hidden;
+  visibility: visible;
   @include respond(mobile) {
     width: 56px;
     height: 56px;

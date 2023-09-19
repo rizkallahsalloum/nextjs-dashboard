@@ -3,7 +3,6 @@ import Sidebar from '@/app/components/sidebar/Sidebar';
 import './global.scss';
 import DashboardHeader from './components/dashboardHeader/DashboardHeader';
 import { useState, useEffect } from 'react';
-import { Oswald, Outfit } from 'next/font/google';
 
 export const metadata = {
   title: 'Next JS 13 Dashboard',

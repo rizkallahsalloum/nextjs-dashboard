@@ -17,6 +17,10 @@
 %flex__center {
   align-items: center;
 }
+%hidden__desktop {
+  display: none;
+}
+
 .display__flex {
   @extend %display__flex;
 }
