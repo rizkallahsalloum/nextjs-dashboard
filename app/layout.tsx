@@ -10,7 +10,7 @@ export const metadata = {
   keywords: 'web development, web design, javascript, react html, sass, github',
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: any) {
   const [toggleNavbar, setToggleNavbar] = useState(false);
 
   const handleToggle = () => {

@@ -13,9 +13,13 @@ interface Client {
   requests: string;
   priority: string;
   hours: number | string;
-  comments: string;
+  comments: Comment[];
 }
-
+type Comment = {
+  title: string;
+  tag: string;
+  comment: string;
+};
 async function getRequests() {
   const res = await fetch('http://localhost:4000/ClientsRequests', {
     next: {
@@ -133,6 +137,17 @@ export default function ClientsRequestsTable({ pageSize }: Client) {
                   />
                   {client.hours}
                 </td>
+                {/* <td>
+                  <ul className={styles.client__tags_list}>
+                    {client.comments
+                      .slice(0, 2) // selects the first two comments
+                      .map((comment: Comment, index: number) => (
+                        <li key={index}>
+                          <span>{comment.tag}</span>
+                        </li>
+                      ))}
+                  </ul>
+                </td> */}
                 <td>
                   <span className={`pill pill__${client.priority}`}>
                     {client.priority}

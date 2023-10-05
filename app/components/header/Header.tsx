@@ -5,12 +5,14 @@ import DashboardHeader from '../dashboardHeader/DashboardHeader';
 
 const Header = () => {
   const [toggleNavbar, setToggleNavbar] = useState(false);
+
   const handleToggle = () => {
     setToggleNavbar(!toggleNavbar);
   };
+
   return (
     <>
-      <Sidebar handleToggle={toggleNavbar} setToggleNavbar={setToggleNavbar} />
+      <Sidebar handleToggle={handleToggle} setToggleNavbar={setToggleNavbar} />
 
       <DashboardHeader handleToggle={handleToggle} />
     </>

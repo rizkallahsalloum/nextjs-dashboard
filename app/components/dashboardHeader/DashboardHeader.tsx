@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 import DateComponent from '../date/DateComponent';
 import styles from './dashboardHeader.module.scss';
@@ -54,6 +52,9 @@ export default function DashboardHeader({ handleToggle }: any) {
                 height={56}
               />
             </Link>
+            <button onClick={handleToggle} className={styles.sidebar__menu_btn}>
+              <Image src={navbarIcon} alt="navbar icon" />
+            </button>
           </div>
         </div>
       </header>

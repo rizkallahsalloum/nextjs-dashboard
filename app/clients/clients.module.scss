@@ -1,7 +1,5 @@
 @import '../styles/helpers';
 @import '../styles/mixins';
-.clients {
-}
 
 .table {
   @extend %component;
@@ -171,6 +169,7 @@
     padding: 1.5rem;
     text-align: left;
   }
+
   table td.flex {
     display: flex;
     justify-content: flex-start;
@@ -260,3 +259,9 @@
   filter: brightness(0) saturate(100%) invert(68%) sepia(49%) saturate(297%)
     hue-rotate(92deg) brightness(85%) contrast(83%);
 }
+// .client__tags_list {
+//   display: inline-block;
+//   li {
+//     padding: 0 1rem;
+//   }
+// }

@@ -1,4 +1,3 @@
-'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
@@ -12,10 +11,17 @@ import ThemeIcon from '../../../public/theme-icon.svg';
 import navbarIcon from '../../../public/navbar-icon.svg';
 import styles from './sidebar.module.scss';
 
-export default function Sidebar({ handleToggle, setToggleNavbar }) {
+export default function Sidebar({
+  handleToggle,
+  setToggleNavbar,
+}: {
+  handleToggle: () => void;
+  setToggleNavbar: (toggle: boolean) => void;
+}) {
   // const router = useRouter();
   const pathname = usePathname();
-  const cx = (...classNames) => classNames.join(' ');
+  const cx = (...classNames: string[]) => classNames.join(' ');
+
   return (
     <>
       <aside
