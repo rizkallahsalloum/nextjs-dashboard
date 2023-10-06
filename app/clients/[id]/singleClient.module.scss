@@ -7,7 +7,7 @@
   align-content: center;
   justify-content: space-between;
   padding: 2.8rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.8);
   span {
     color: #fff;
   }
@@ -20,6 +20,7 @@
     justify-content: flex-start;
     flex-wrap: wrap;
     align-items: center;
+    color: #fff;
   }
   &_info_data {
     display: flex;
@@ -40,9 +41,10 @@
   display: flex;
   margin-top: 3rem;
   &_list {
-    display: flex;
-    justify-content: space-between;
-    gap: 2.8rem;
+    width: 100%;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     &_item {
       @extend %component;
       display: flex;
@@ -56,8 +58,12 @@
     .tag {
       border-radius: 1rem;
       padding: 0.5rem 1rem;
-      font-size: 1.4rem;
-      // color: var(--clr-white);
+      font-size: 1.2rem;
+      color: var(--clr-white);
+      background-color: var(--clr-primary);
+      &:nth-child(odd) {
+        background-color: var(--clr-orange);
+      }
     }
   }
   hr {

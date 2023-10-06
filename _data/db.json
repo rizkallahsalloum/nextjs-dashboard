@@ -225,17 +225,17 @@
       "comments": [
         {
           "title": "Balanced Color Scheme and Modern Design",
-          "tags": ["#ColorScheme", "#ModernDesign"],
+          "tags": ["Color Scheme", "Modern Design"],
           "comment": "The color scheme is perfectly balanced, creating a visually appealing UI."
         },
         {
           "title": "Excellent Typography Choices",
-          "tags": ["#Typography", "#DesignChoices"],
+          "tags": ["Typography", "Design Choices"],
           "comment": "Typography choices are excellent, enhancing the overall readability of the content."
         },
         {
           "title": "Sleek and Modern UI Design",
-          "tags": ["#UI", "#ModernDesign"],
+          "tags": ["UI", "Modern Design"],
           "comment": "The overall design is sleek and modern, providing an intuitive user experience."
         }
       ]
@@ -253,17 +253,17 @@
       "comments": [
         {
           "title": "Vibrant Color Palette",
-          "tags": ["#ColorPalette", "#Vibrant"],
+          "tags": ["Color Palette", "Vibrant"],
           "comment": "I love the vibrant and energetic color palette used in this UI."
         },
         {
           "title": "Elegant Typography",
-          "tags": ["#Typography", "#Elegant"],
+          "tags": ["Typography", "Elegant"],
           "comment": "The typography is elegant and complements the design beautifully."
         },
         {
           "title": "User-Centric and Responsive Design",
-          "tags": ["#UserCentric", "#Responsive"],
+          "tags": ["User Centric", "Responsive"],
           "comment": "The design is user-centric and makes navigation a breeze. The responsive design of this UI is outstanding. It adapts seamlessly to different screen sizes and orientations."
         }
       ]
@@ -281,32 +281,32 @@
       "comments": [
         {
           "title": "Bold Color Choices",
-          "tags": ["#ColorChoices", "#BoldColors"],
+          "tags": ["Color Choices", "Bold Colors"],
           "comment": "The color choices are a bit too bold for my taste, but they do grab attention."
         },
         {
           "title": "Typography Needs Improvement",
-          "tags": ["#Typography", "#Improvement"],
+          "tags": ["Typography", "Improvement"],
           "comment": "The typography needs some improvement, as it affects the readability of the text."
         },
         {
           "title": "Design Potential",
-          "tags": ["#DesignPotential", "#Potential"],
+          "tags": ["Design Potential", "Potential"],
           "comment": "The design has potential but could benefit from simplification for a cleaner look."
         },
         {
           "title": "Outstanding Responsive Design",
-          "tags": ["#ResponsiveDesign", "#Outstanding"],
+          "tags": ["Responsive Design", "Outstanding"],
           "comment": "The responsive design of this UI is outstanding. It adapts seamlessly to different screen sizes and orientations."
         },
         {
           "title": "Pleasing Color Choice",
-          "tags": ["#PleasingColors", "#PleasingChoice"],
+          "tags": ["Pleasing Colors", "Pleasing Choice"],
           "comment": "The choice of colors is pleasing to the eye and contributes to a harmonious user experience."
         },
         {
           "title": "Sleek and Modern UI Design",
-          "tags": ["#UI", "#ModernDesign"],
+          "tags": ["UI", "Modern Design"],
           "comment": "A sleek and modern UI that excels in responsiveness, adapting seamlessly to different devices."
         }
       ]
@@ -324,22 +324,22 @@
       "comments": [
         {
           "title": "Depth with Gradients",
-          "tags": ["#Gradients", "#Depth"],
+          "tags": ["Gradients", "Depth"],
           "comment": "The use of gradients in the UI adds depth and sophistication."
         },
         {
           "title": "Consistent Typography",
-          "tags": ["#Typography", "#Consistent"],
+          "tags": ["Typography", "Consistent"],
           "comment": "Typography is consistent and aids in creating a coherent design."
         },
         {
           "title": "Appealing and User-Friendly Design",
-          "tags": ["#UserFriendly", "#Appealing"],
+          "tags": ["User Friendly", "Appealing"],
           "comment": "The overall design is appealing and user-friendly."
         },
         {
           "title": "Impressively Mobile-Friendly",
-          "tags": ["#MobileFriendly", "#Impressive"],
+          "tags": ["Mobile Friendly", "Impressive"],
           "comment": "An impressively mobile-friendly UI that ensures a smooth experience on smartphones and tablets."
         }
       ]
@@ -357,22 +357,22 @@
       "comments": [
         {
           "title": "Unique and Refreshing Color Scheme",
-          "tags": ["#UniqueColors", "#Refreshing"],
+          "tags": ["Unique Colors", "Refreshing"],
           "comment": "The color scheme here is unique and refreshing, making the UI stand out."
         },
         {
           "title": "Bold Typography Choices",
-          "tags": ["#Typography", "#Bold"],
+          "tags": ["Typography", "Bold"],
           "comment": "Typography choices are bold, which suits the brand's personality."
         },
         {
           "title": "Balance Between Aesthetics and Usability",
-          "tags": ["#Aesthetics", "#Usability"],
+          "tags": ["Aesthetics", "Usability"],
           "comment": "The design has a great balance between aesthetics and usability."
         },
         {
           "title": "User-Centric Design",
-          "tags": ["#UserCentric", "#UserFriendly"],
+          "tags": ["User Centric", "User Friendly"],
           "comment": "A user-centric design with flawless responsiveness across desktop and mobile platforms."
         }
       ]
@@ -390,12 +390,12 @@
       "comments": [
         {
           "title": "Soothing Color Scheme",
-          "tags": ["#SoothingColors", "#Calming"],
+          "tags": ["Soothing Colors", "Calming"],
           "comment": "The color scheme is soothing and creates a calming user experience."
         },
         {
           "title": "Minimalistic Typography",
-          "tags": ["#Typography", "#Minimalistic"],
+          "tags": ["Typography", "Minimalistic"],
           "comment": "Typography is minimalistic, contributing to a clean and uncluttered design."
         }
       ]
@@ -413,23 +413,107 @@
       "comments": [
         {
           "title": "Effective Color Choices",
-          "tags": ["#EffectiveColors", "#BrandIdentity"],
+          "tags": ["Effective Colors", "Brand Identity"],
           "comment": "Colors are well-chosen and effectively represent the brand's identity."
         },
         {
           "title": "Typography Enhancements Needed",
-          "tags": ["#Typography", "#Enhancements"],
+          "tags": ["Typography", "Enhancements"],
           "comment": "While the overall design is good, there are some areas where typography enhancements are needed for better readability."
         },
         {
           "title": "Impressive Responsive Design",
-          "tags": ["#ResponsiveDesign", "#Impressive"],
+          "tags": ["Responsive Design", "Impressive"],
           "comment": "The responsive design of this UI is impressive, ensuring a seamless user experience across devices."
         },
         {
           "title": "Pleasing UI Design",
-          "tags": ["#UIDesign", "#Pleasing"],
+          "tags": ["UI Design", "Pleasing"],
           "comment": "A pleasing UI design that aligns with the brand's image and values."
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Olivia Anderson",
+      "startingDate": "14/07/2022",
+      "totalProjects": "3",
+      "img": "https://images.unsplash.com/photo-1485893086445-ed75865251e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fHJhbmRvbSUyMHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+      "wallpaper": "https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80",
+      "priority": "medium",
+      "requests": "5",
+      "hours": "9 hours",
+      "comments": [
+        {
+          "title": "Engaging User Interface",
+          "tags": ["User Interface", "Engaging"],
+          "comment": "The user interface is engaging and encourages user interaction, which is a great feature."
+        },
+        {
+          "title": "Striking Color Choices",
+          "tags": ["Color Choices", "Striking"],
+          "comment": "The color choices are striking and create a memorable visual experience for users."
+        },
+        {
+          "title": "Responsive Design Excellence",
+          "tags": ["Responsive Design", "Excellence"],
+          "comment": "The responsive design of this UI is excellent, ensuring a seamless experience across various devices."
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "name": "Sophia Johnson",
+      "startingDate": "03/12/2021",
+      "totalProjects": "4",
+      "img": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDZ8fHJhbmRvbSUyMHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+      "wallpaper": "https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3x0MjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80",
+      "priority": "high",
+      "requests": "6",
+      "hours": "13 hours",
+      "comments": [
+        {
+          "title": "Unique Design Approach",
+          "tags": ["Design Approach", "Unique"],
+          "comment": "The design approach taken here is unique and sets it apart from competitors."
+        },
+        {
+          "title": "Harmonious Color Palette",
+          "tags": ["Color Palette", "Harmonious"],
+          "comment": "The color palette used in this UI is harmonious and creates a pleasing visual experience."
+        },
+        {
+          "title": "Effortless Navigation",
+          "tags": ["Navigation", "Effortless"],
+          "comment": "Users can effortlessly navigate through the UI, enhancing their overall experience."
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "name": "William Smith",
+      "startingDate": "09/05/2020",
+      "totalProjects": "5",
+      "img": "https://images.unsplash.com/photo-1621353269062-6aa0165576f2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fHJhbmRvbSUyMHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+      "wallpaper": "https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3x0MjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80",
+      "priority": "low",
+      "requests": "4",
+      "hours": "6 hours",
+      "comments": [
+        {
+          "title": "Intuitive User Flow",
+          "tags": ["User Flow", "Intuitive"],
+          "comment": "The user flow is intuitive, ensuring that users can easily accomplish their tasks."
+        },
+        {
+          "title": "Aesthetic Typography",
+          "tags": ["Typography", "Aesthetic"],
+          "comment": "Typography choices are not only functional but also add to the overall aesthetic appeal."
+        },
+        {
+          "title": "Cross-Platform Compatibility",
+          "tags": ["Compatibility", "Cross-Platform"],
+          "comment": "This UI excels in cross-platform compatibility, providing a consistent experience on all devices."
         }
       ]
     }

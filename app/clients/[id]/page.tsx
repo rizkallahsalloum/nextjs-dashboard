@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Image from 'next/image';
 import styles from './singleClient.module.scss';
 
@@ -48,6 +49,7 @@ async function SingleClient({ params }: SingleClientProps) {
           />
           <h2>{singleRequest.name}</h2>
         </div>
+
         <div className={styles.single__client_header_info_data}>
           <div className={`${styles.display__flex_column} `}>
             Client from <span>{singleRequest.startingDate}</span>
@@ -58,18 +60,19 @@ async function SingleClient({ params }: SingleClientProps) {
           </div>
         </div>
       </header>
+      <Link href="/clients">Back to Clients</Link>
       <div className={styles.single__client_comments}>
-        <div className={styles.single__client_comments_list}>
-          {singleRequest.comments.map((comment: Comment, index: number) => (
+        <div className={`${styles.single__client_comments_list}`}>
+          {singleRequest.comments?.map((comment: Comment, index: number) => (
             <div
               key={index}
-              className={styles.single__client_comments_list_item}
+              className={`${styles.single__client_comments_list_item}`}
             >
-              <h3>{comment.title}</h3>
+              <h4>{comment.title}</h4>
               <p>{comment.comment}</p>
               <hr />
               <ul className={styles.single__client_comments_list_item_tag}>
-                {comment.tags.map((tag: string, tagIndex: number) => (
+                {comment.tags?.map((tag: string, tagIndex: number) => (
                   <li key={tagIndex} className={styles.tag}>
                     {tag}
                   </li>

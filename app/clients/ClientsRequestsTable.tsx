@@ -115,7 +115,7 @@ export default function ClientsRequestsTable({ pageSize }: Client) {
         <hr className={styles.separator} />
         <table>
           <tbody>
-            {currentData.map((client: Client) => (
+            {currentData?.map((client: Client) => (
               <tr key={client.id}>
                 <td className={styles.flex}>
                   <Image
