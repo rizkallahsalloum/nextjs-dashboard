@@ -5,21 +5,28 @@
 
 /* Color styles */
 :root {
-  --clr-text: rgba(31, 63, 73, 1);
-  --clr-text--darker: rgba(35, 40, 45, 1);
-  --clr-text--darker--op: rgba(35, 40, 45, 1);
-  --clr-primary: rgb(107, 176, 136);
-  --clr-orange: rgb(246, 196, 80);
-  --clr-primary-darken: #{darken(rgba(106, 177, 135, 1), 10%)};
-  --clr-secondary: rgba(211, 45, 65, 1);
-  --clr-darker--green: rgba(31, 63, 73, 1);
-  --clr-gray: rgba(206, 210, 204, 1);
-  --clr-light--green: rgba(179, 193, 0, 1);
+  --clr-gray: hsl(0, 4%, 95%);
+  --clr-light--gray: hsl(0, 2%, 91%);
+  --clr-lighter--gray: hsl(0, 3%, 94%);
+  --clr-charcoal--gray: hsl(224, 19%, 24%);
+  --clr-light-charcoal--gray: hsl(225, 19%, 49%);
+  --clr-yellow: hsl(36, 85%, 64%);
+  --clr-green: hsl(165, 40%, 62%);
   --clr-white: rgba(255, 255, 255, 1);
   --clr-black: rgba(0, 0, 0, 1);
-  --clr-light--blue: rgba(76, 181, 245, 1);
-  --clr-light--gray: #f6f9ff;
-  --clr-main--bg: #dfe9fe;
+  // --clr-text: rgba(31, 63, 73, 1);
+  // --clr-text--darker: rgba(35, 40, 45, 1);
+  // --clr-text--darker--op: rgba(35, 40, 45, 1);
+  // --clr-primary: rgb(107, 176, 136);
+  // --clr-orange: rgb(246, 196, 80);
+  // --clr-primary-darken: #{darken(rgba(106, 177, 135, 1), 10%)};
+  // --clr-secondary: rgba(211, 45, 65, 1);
+  // --clr-darker--green: rgba(31, 63, 73, 1);
+  // --clr-gray: rgba(206, 210, 204, 1);
+  // --clr-light--green: rgba(179, 193, 0, 1);
+  // --clr-light--blue: rgba(76, 181, 245, 1);
+  // --clr-light--gray: #f6f9ff;
+  // --clr-main--bg: #dfe9fe;
 
   --font-primary: 'Outfit';
   --font-secondary: 'Oswald';
@@ -50,7 +57,6 @@ picture {
 
 html {
   font-size: 62.5%;
-  overflow-y: scroll;
   scroll-behavior: smooth;
   box-sizing: border-box;
 }
@@ -60,7 +66,6 @@ body {
   color: var(--clr-text);
   line-height: 1.6;
   font-size: 1.6rem;
-  overflow-x: hidden;
 }
 img,
 picture {
@@ -117,7 +122,7 @@ a.active {
 
 .wrapper {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
   grid-template-columns: 19.5em 1fr;
   grid-template-areas: 'sidebar content';
@@ -128,6 +133,8 @@ a.active {
     margin: 0;
     grid-template-columns: 1fr;
     grid-template-areas: 'sidebar content';
+    position: relative;
+    overflow: hidden;
   }
 }
 
@@ -136,7 +143,7 @@ a.active {
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
-  background: var(--clr-light--gray);
+  background: var(--clr-gray);
   padding: 4.4rem 2.4rem;
   @include respond(mobile) {
     padding: 2rem 2.4rem;

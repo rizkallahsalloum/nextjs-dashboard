@@ -1,22 +1,22 @@
-'use client';
-import { useState, useEffect } from 'react';
-import Sidebar from '../sidebar/Sidebar';
-import DashboardHeader from '../dashboardHeader/DashboardHeader';
+// 'use client';
+// import { useState, useEffect } from 'react';
+// import Sidebar from '../sidebar/Sidebar';
+// import DashboardHeader from '../dashboardHeader/DashboardHeader';
 
-const Header = () => {
-  const [toggleNavbar, setToggleNavbar] = useState(false);
+// const Header = () => {
+//   const [toggleNavbar, setToggleNavbar] = useState(false);
 
-  const handleToggle = () => {
-    setToggleNavbar(!toggleNavbar);
-  };
+//   const handleToggle = () => {
+//     setToggleNavbar(!toggleNavbar);
+//   };
 
-  return (
-    <>
-      <Sidebar handleToggle={handleToggle} setToggleNavbar={setToggleNavbar} />
+//   return (
+//     <>
+//       <Sidebar handleToggle={handleToggle} setToggleNavbar={setToggleNavbar} />
 
-      <DashboardHeader handleToggle={handleToggle} />
-    </>
-  );
-};
+//       <DashboardHeader handleToggle={handleToggle} />
+//     </>
+//   );
+// };
 
-export default Header;
+// export default Header;

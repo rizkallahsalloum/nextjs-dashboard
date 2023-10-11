@@ -1,8 +1,6 @@
-'use client';
 import Sidebar from '@/app/components/sidebar/Sidebar';
 import './global.scss';
 import DashboardHeader from './components/dashboardHeader/DashboardHeader';
-import { useState, useEffect } from 'react';
 
 export const metadata = {
   title: 'Next JS 13 Dashboard',
@@ -11,22 +9,16 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }: any) {
-  const [toggleNavbar, setToggleNavbar] = useState(false);
-
-  const handleToggle = () => {
-    setToggleNavbar(!toggleNavbar);
-  };
   return (
     <html lang="en">
-      <body className="wrapper">
-        <Sidebar
-          handleToggle={toggleNavbar}
-          setToggleNavbar={setToggleNavbar}
-        />
-        <main className="main">
-          <DashboardHeader handleToggle={handleToggle} />
-          {children}
-        </main>
+      <body>
+        <div className="wrapper">
+          <Sidebar />
+          <main className="main">
+            <DashboardHeader />
+            {children}
+          </main>
+        </div>
       </body>
     </html>
   );

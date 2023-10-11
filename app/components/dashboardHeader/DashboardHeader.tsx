@@ -4,9 +4,8 @@ import styles from './dashboardHeader.module.scss';
 import Image from 'next/image';
 import searchIcon from '../../../public/search-icon.svg';
 import notificationIcon from '../../../public/notification-icon.svg';
-import navbarIcon from '../../../public/navbar-icon.svg';
 
-export default function DashboardHeader({ handleToggle }: any) {
+export default function DashboardHeader() {
   return (
     <>
       <header className={`${styles.header}  display__flex flex__wrap`}>
@@ -52,9 +51,6 @@ export default function DashboardHeader({ handleToggle }: any) {
                 height={56}
               />
             </Link>
-            <button onClick={handleToggle} className={styles.sidebar__menu_btn}>
-              <Image src={navbarIcon} alt="navbar icon" />
-            </button>
           </div>
         </div>
       </header>

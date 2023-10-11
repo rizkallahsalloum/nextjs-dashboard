@@ -10,11 +10,9 @@
   justify-content: space-around;
   background-color: var(--clr-white);
   padding: 0 0 0 3.6rem;
-
-  height: 100vh;
   z-index: 300;
   position: sticky;
-  top: 0px;
+  top: 0;
   @include respond(desktop) {
     display: flex;
     align-items: center !important;
@@ -42,6 +40,9 @@
       figcaption {
         display: block;
       }
+    }
+    .sidebar__open body {
+      overflow: hidden !important;
     }
   }
 
@@ -140,8 +141,11 @@
     }
   }
 }
-.sidebar__menu_btn {
-  visibility: visible;
+
+.sidebar__toggle {
+  display: none;
+  // visibility: visible;
+
   @include respond(mobile) {
     width: 56px;
     height: 56px;
@@ -150,11 +154,11 @@
     align-items: center;
     justify-content: center;
     visibility: visible;
-    right: 3rem;
-    top: 6.5rem;
+    right: 2rem;
+    top: 10.2rem;
     border: none;
     cursor: pointer;
-    background: var(--clr-text--darker);
+    background: var(--clr-light--gray);
     border-radius: 50%;
     z-index: 200;
   }

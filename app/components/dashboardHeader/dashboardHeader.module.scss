@@ -33,7 +33,7 @@
         height: 5rem;
         padding-block: 1.5rem;
         text-indent: 4.5rem;
-        background-color: #e8effc;
+        background-color: #e9e8e8;
       }
       ::placeholder {
         font-family: 'Outfit';
@@ -56,6 +56,11 @@
       }
     }
     &_user_info {
+      @include respond(mobile) {
+        justify-content: flex-end;
+        margin-right: 6rem;
+        order: 1;
+      }
       @include respond(tablet) {
         justify-content: flex-end;
         // margin-right: 8rem;
@@ -115,24 +120,5 @@
     button {
       @extend %transparent__button;
     }
-  }
-}
-
-.sidebar__menu_btn {
-  visibility: hidden;
-  display: none;
-  @include respond(mobile) {
-    width: 5rem;
-    height: 5rem;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    visibility: visible;
-    border: none;
-    cursor: pointer;
-    background: var(--clr-text--darker);
-    border-radius: 50%;
-    z-index: 200;
   }
 }

@@ -72,7 +72,7 @@
     }
   }
   .card__user_icon {
-    background-color: #f6f9ff;
+    background-color: #f1b356;
     border-radius: 1rem;
     width: 2em;
     height: 2em;
@@ -80,8 +80,8 @@
     align-items: center;
     justify-content: center;
     img {
-      filter: brightness(0) saturate(100%) invert(68%) sepia(7%) saturate(1977%)
-        hue-rotate(92deg) brightness(92%) contrast(88%);
+      filter: brightness(0) saturate(100%) invert(19%) sepia(9%) saturate(1661%)
+        hue-rotate(187deg) brightness(92%) contrast(89%);
     }
   }
   &:hover {

@@ -11,8 +11,8 @@ import {
   ClientsRequests,
 } from './data';
 import LineCharts from './components/lineCharts/LineCharts';
-import CustomTooltip from './components/customTooltip/CustomTooltip';
 import ClientsRequestsTable from './clients/ClientsRequestsTable';
+
 export default function HomePage() {
   return (
     <section className="content">

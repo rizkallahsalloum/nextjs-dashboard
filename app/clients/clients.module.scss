@@ -3,6 +3,7 @@
 
 .table {
   @extend %component;
+  background-color: var(--clr-white);
   @extend %display__flex;
   flex-direction: column;
   position: relative;
