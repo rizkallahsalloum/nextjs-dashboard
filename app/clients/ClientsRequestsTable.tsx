@@ -119,7 +119,7 @@ export default function ClientsRequestsTable({ pageSize }: Client) {
               <tr key={client.id}>
                 <td className={styles.flex}>
                   <Image
-                    src={client.img}
+                    src={client.img || 'default-image-url'}
                     alt="Client Photo"
                     width={50}
                     height={50}
