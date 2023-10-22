@@ -16,19 +16,6 @@
   --clr-green: hsl(165, 40%, 62%);
   --clr-white: rgba(255, 255, 255, 1);
   --clr-black: rgba(0, 0, 0, 1);
-  // --clr-text: rgba(31, 63, 73, 1);
-  // --clr-secondary: rgba(211, 45, 65, 1);
-  // --clr-text--darker: rgba(35, 40, 45, 1);
-  // --clr-text--darker--op: rgba(35, 40, 45, 1);
-  // --clr-primary: rgb(107, 176, 136);
-  // --clr-orange: rgb(246, 196, 80);
-  // --clr-primary-darken: #{darken(rgba(106, 177, 135, 1), 10%)};
-  // --clr-darker--green: rgba(31, 63, 73, 1);
-  // --clr-gray: rgba(206, 210, 204, 1);
-  // --clr-light--green: rgba(179, 193, 0, 1);
-  // --clr-light--blue: rgba(76, 181, 245, 1);
-  // --clr-light--gray: #f6f9ff;
-  // --clr-main--bg: #dfe9fe;
 
   --font-primary: 'Outfit';
   --font-secondary: 'Oswald';
@@ -160,7 +147,8 @@ a.active {
   }
 }
 .component__title {
-  font: 2.2rem var(--font-primary);
+  font-family: var(--font-primary);
+  font-size: 2.2rem;
   font-weight: bold;
   color: var(--clr-dark--gray);
 }
