@@ -47,12 +47,12 @@ export default function ClientsRequestsTable({ pageSize }: Client) {
   };
 
   // Calculate the start and end indexes for the current page
-  const startIndex = (currentPage - 1) * pageSize;
-  const endIndex = startIndex + pageSize;
+  const startIndex = (currentPage - 1) * (pageSize || 10); // 10 is the default value
+  const endIndex = startIndex + (pageSize || 10);
   const currentData = data.slice(startIndex, endIndex);
 
   // Calculate total pages
-  const totalPages = Math.ceil(data.length / pageSize);
+  const totalPages = Math.ceil(data.length / (pageSize || 10));
 
   return (
     <div>
