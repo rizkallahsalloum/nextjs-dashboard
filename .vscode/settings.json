@@ -6,5 +6,7 @@
     "activityBar.background": "#163405",
     "titleBar.activeBackground": "#1F4907",
     "titleBar.activeForeground": "#F2FDEC"
-  }
+  },
+  "editor.fontFamily": "Dank Mono",
+  "editor.fontVariations": false
 }

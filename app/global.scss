@@ -5,22 +5,24 @@
 
 /* Color styles */
 :root {
+  --clr-dark-gray: hsl(220, 41%, 11%);
   --clr-gray: hsl(0, 4%, 95%);
   --clr-light--gray: hsl(0, 2%, 91%);
   --clr-lighter--gray: hsl(0, 3%, 94%);
   --clr-charcoal--gray: hsl(224, 19%, 24%);
   --clr-light-charcoal--gray: hsl(225, 19%, 49%);
   --clr-yellow: hsl(36, 85%, 64%);
+  --clr-red: hsl(0, 85%, 64%);
   --clr-green: hsl(165, 40%, 62%);
   --clr-white: rgba(255, 255, 255, 1);
   --clr-black: rgba(0, 0, 0, 1);
   // --clr-text: rgba(31, 63, 73, 1);
+  // --clr-secondary: rgba(211, 45, 65, 1);
   // --clr-text--darker: rgba(35, 40, 45, 1);
   // --clr-text--darker--op: rgba(35, 40, 45, 1);
   // --clr-primary: rgb(107, 176, 136);
   // --clr-orange: rgb(246, 196, 80);
   // --clr-primary-darken: #{darken(rgba(106, 177, 135, 1), 10%)};
-  // --clr-secondary: rgba(211, 45, 65, 1);
   // --clr-darker--green: rgba(31, 63, 73, 1);
   // --clr-gray: rgba(206, 210, 204, 1);
   // --clr-light--green: rgba(179, 193, 0, 1);
@@ -63,7 +65,7 @@ html {
 body {
   font-family: 'Outfit', 'Oswald', sans-serif;
   background-color: var(--clr-main--bg);
-  color: var(--clr-text);
+  color: var(--clr-dark-gray);
   line-height: 1.6;
   font-size: 1.6rem;
 }
@@ -73,16 +75,16 @@ picture {
   display: block;
 }
 ::selection {
-  background-color: var(--clr-primary);
+  background-color: var(--clr-green);
   color: var(--clr-white);
 }
 a {
   text-decoration: underline;
-  color: var(--clr-text);
+  color: var(--clr-light-charcoal--gray);
 }
 a:hover {
   text-decoration: underline;
-  color: var(--clr-primary);
+  color: var(--clr-green);
 }
 ul {
   list-style: none;
@@ -95,7 +97,7 @@ input {
 }
 a.active {
   width: 15em;
-  color: var(--clr-text);
+  color: var(--clr-light-charcoal--gray);
   background: var(--clr-light--gray);
   border-radius: 10px;
   @include respond(desktop) {
@@ -144,7 +146,7 @@ a.active {
   flex-direction: column;
   flex: 1 1 auto;
   background: var(--clr-gray);
-  padding: 4.4rem 2.4rem;
+  padding: 4.4rem;
   @include respond(mobile) {
     padding: 2rem 2.4rem;
   }
@@ -158,14 +160,14 @@ a.active {
   }
 }
 .component__title {
-  font: 1.8rem var(--font-primary);
-  font-weight: medium;
-  color: var(--clr-text);
+  font: 2.2rem var(--font-primary);
+  font-weight: bold;
+  color: var(--clr-dark--gray);
 }
 
 .grid__container {
   display: grid;
-  gap: 20px;
+  gap: 5rem;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: minmax(10rem, auto);
   grid-auto-flow: dense;
@@ -194,7 +196,7 @@ a.active {
   text-transform: capitalize;
   &__low {
     background-color: rgb(107, 176, 136, 0.3);
-    color: var(--clr-primary);
+    color: var(--clr-green);
   }
   &__medium {
     background-color: rgb(246, 196, 80, 0.3);
@@ -202,6 +204,6 @@ a.active {
   }
   &__high {
     background-color: rgb(211, 45, 65, 0.3);
-    color: var(--clr-secondary);
+    color: var(--clr-red);
   }
 }

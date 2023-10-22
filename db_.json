@@ -166,7 +166,7 @@
   "totalClientsCard": {
     "color": "#1f3f49",
     "icon": "/clients-icon.svg",
-    "title": "Total Clients",
+    "title": "Total Clients db",
     "amount": "25",
     "dataKey": "clients",
     "percentage": -3,

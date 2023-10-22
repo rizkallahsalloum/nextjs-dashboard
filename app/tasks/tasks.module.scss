@@ -1,0 +1,13 @@
+@import '../styles/mixins';
+@import '../styles/helpers';
+
+.tasks {
+  @extend %component;
+  padding-left: 0;
+  background-color: transparent;
+  color: var(--clr-dark-gray);
+  &__link {
+    color: var(--clr-light-charcoal--gray);
+    text-decoration: none;
+  }
+}

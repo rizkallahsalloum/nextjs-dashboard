@@ -67,7 +67,7 @@
 
     .card__user_type {
       font-size: 1.6rem;
-      color: var(--clr-text);
+      color: var(--clr-dark-gray);
       font-weight: 600;
     }
   }
@@ -87,7 +87,7 @@
   &:hover {
     // transform: scale(1.1);
     transition: all 0.3s ease;
-    background-color: var(--clr-primary);
+    background-color: var(--clr-green);
     color: var(--clr-white);
     .cart__user_icon {
       background-color: var(--clr-primary-darken);
@@ -127,36 +127,3 @@
     text-transform: capitalize;
   }
 }
-
-// .triangle,
-// .triangle:before,
-// .triangle:after {
-//   width: 12px;
-//   height: 12px;
-// }
-// .triangle {
-//   overflow: hidden;
-//   position: relative;
-//   // margin: 7em auto 0;
-//   border-radius: 20%;
-//   transform: translateY(50%) rotate(30deg) skewY(30deg) scaleX(0.866);
-//   cursor: pointer;
-//   pointer-events: none;
-// }
-// .triangle:before,
-// .triangle:after {
-//   position: absolute;
-//   background: #1a47b0;
-//   pointer-events: auto;
-//   content: '';
-// }
-// .triangle:before {
-//   border-radius: 20% 20% 20% 53%;
-//   transform: scaleX(1.155) skewY(-30deg) rotate(-30deg) translateY(-42.3%)
-//     skewX(30deg) scaleY(0.866) translateX(-24%);
-// }
-// .triangle:after {
-//   border-radius: 20% 20% 53% 20%;
-//   transform: scaleX(1.155) skewY(-30deg) rotate(-30deg) translateY(-42.3%)
-//     skewX(-30deg) scaleY(0.866) translateX(24%);
-// }

@@ -47,6 +47,7 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     &_item {
       @extend %component;
+      background-color: var(--clr-white);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -60,15 +61,15 @@
       padding: 0.5rem 1rem;
       font-size: 1.2rem;
       color: var(--clr-white);
-      background-color: var(--clr-primary);
+      background-color: var(--clr-green);
       &:nth-child(odd) {
-        background-color: var(--clr-orange);
+        background-color: var(--clr-yellow);
       }
     }
   }
   hr {
     border: none;
-    border-top: 2px solid #f6f9ff;
+    border-top: 2px solid var(--clr-gray);
     text-align: center;
     margin: 1rem 0;
   }

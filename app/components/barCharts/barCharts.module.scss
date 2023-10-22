@@ -1,20 +1,17 @@
 @import '../../styles/mixins';
 @import '../../styles/helpers';
 
-.line__charts {
+.bar__charts {
   @extend %component;
-  background-color: var(--clr-dark-gray);
-  color: var(--clr-white);
-  h3 {
-    color: var(--clr-white);
-  }
+  background-color: var(--clr-white);
+  color: var(--clr-dark-gray);
   &_link {
     color: var(--clr-light-charcoal--gray);
     text-decoration: none;
   }
   &_highest_task {
-    color: #c5c7cf;
     padding: 2rem 0;
+    color: #c5c7cf;
     span {
       background-color: hsl(225, 20%, 33%);
       padding: 0.5rem 1rem;
@@ -23,7 +20,6 @@
     }
   }
 }
-/* Tooltip container */
 
 /* custom-tooltip.css */
 .custom_tooltip {

@@ -1,22 +1,53 @@
 'use client';
+
 import {
-  ResponsiveContainer,
   LineChart,
   Line,
   XAxis,
-  YAxis,
-  CartesianGrid,
+  ResponsiveContainer,
   Tooltip,
   Legend,
+  CartesianGrid,
 } from 'recharts';
+
 import styles from './lineCharts.module.scss';
+import Link from 'next/link';
 
 // type Props = {
 //   name: string;
 //   tasks: number;
 // };
+const data = [
+  {
+    name: 'Jan',
+    tasks: 6,
+  },
+  {
+    name: 'Feb',
+    tasks: 3,
+  },
+  {
+    name: 'Mar',
+    tasks: 8,
+  },
+  {
+    name: 'Apr',
+    tasks: 4,
+  },
+  {
+    name: 'May',
+    tasks: 22,
+  },
+  {
+    name: 'Jun',
+    tasks: 18,
+  },
+];
+interface LinChartsProps {
+  title: string;
+}
 
-const CustomTooltip = ({ active, payload }) => {
+const CustomTooltip = ({ active, payload }: any) => {
   if (active && payload && payload.length) {
     const data = payload[0].payload;
     const valueKey = Object.keys(data).find((key) => key !== 'name');
@@ -24,91 +55,53 @@ const CustomTooltip = ({ active, payload }) => {
 
     return (
       <div className={styles.custom_tooltip}>
-        <p className={styles.custom_tooltip_title}>{data.name}</p>
         <p className={styles.custom_tooltip_label}>
-          {valueKey}: {value}
+          {value} {valueKey}
         </p>
       </div>
     );
   }
   return null;
 };
-const data = [
-  {
-    name: 'Sun',
-    uv: 4000,
-    tasks: 2400,
-    amt: 2400,
-  },
-  {
-    name: 'Mon',
-    uv: 3000,
-    tasks: 1398,
-    amt: 2210,
-  },
-  {
-    name: 'Tue',
-    uv: 2000,
-    tasks: 9800,
-    amt: 2290,
-  },
-  {
-    name: 'Wed',
-    uv: 2780,
-    tasks: 3908,
-    amt: 2000,
-  },
-  {
-    name: 'Thu',
-    uv: 1890,
-    tasks: 4800,
-    amt: 2181,
-  },
-  {
-    name: 'Fri',
-    uv: 2390,
-    tasks: 3800,
-    amt: 2500,
-  },
-  {
-    name: 'Sat',
-    tasks: 1,
-  },
-];
 
-const LineCharts = () => {
+const highestTask = data.reduce((max, obj) => Math.max(max, obj.tasks), 0);
+const LineCharts: React.FC<LinChartsProps> = ({ title }) => {
   return (
-    <div className={styles.line_charts}>
-      <h3 className={styles.component__title}>Payment and Transactions</h3>
-      <ResponsiveContainer width="99%" height={350}>
+    <div className={styles.line__charts}>
+      <div className={styles.display__flex}>
+        <h3 className="component__title">{title}</h3>
+        <Link href={'/tasks'} className={styles.line__charts_link}>
+          Open
+        </Link>
+      </div>
+      <div className={styles.line__charts_highest_task}>
+        <span>{highestTask}</span> Best result
+      </div>
+      <ResponsiveContainer width="100%" height={200}>
         <LineChart
-          // width={500}
-          // height={400}
           data={data}
           margin={{
             top: 5,
-            right: 30,
+            right: 10,
             left: 20,
             bottom: 5,
           }}
         >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          {/* <YAxis /> */}
+          <CartesianGrid strokeDasharray="8" vertical={false} />
+          <XAxis dataKey="name" tick={{ fill: '#7f7f96' }} />
           <Tooltip
             contentStyle={{ background: 'transparent', border: 'none' }}
             labelStyle={{ display: 'none' }}
-            // position={{ x: -30, y: 70 }}
             content={<CustomTooltip />}
           />
-          {/* <Legend /> */}
+
           <Line
             type="monotone"
             dataKey="tasks"
-            stroke="#8884d8"
+            stroke="hsl(165, 40%, 62%)"
             activeDot={{ r: 8 }}
+            fill="#fff"
           />
-          {/* <Line type="monotone" dataKey="uv" stroke="#82ca9d" /> */}
         </LineChart>
       </ResponsiveContainer>
     </div>

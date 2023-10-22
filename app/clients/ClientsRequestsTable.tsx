@@ -6,14 +6,14 @@ import styles from './clients.module.scss';
 import Link from 'next/link';
 
 interface Client {
-  id: number | string;
-  pageSize: number;
-  img: string;
-  name: string;
-  requests: string;
-  priority: string;
-  hours: number | string;
-  comments: Comment[];
+  id?: number | string;
+  pageSize?: number;
+  img?: string;
+  name?: string;
+  requests?: string;
+  priority?: string;
+  hours?: number | string;
+  comments?: Comment[];
 }
 type Comment = {
   title: string;
@@ -59,7 +59,7 @@ export default function ClientsRequestsTable({ pageSize }: Client) {
       <div className={styles.table}>
         <div className={`${styles.table__header} ${styles.display__flex}`}>
           <div className={`${styles.table__title}`}>
-            <h3 className={styles.component__title}>Clients Notes</h3>
+            <h3 className="component__title">Clients Notes</h3>
             <span className={`${styles.table__data_length}`}>
               {data.length} total
             </span>

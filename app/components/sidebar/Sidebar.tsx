@@ -1,8 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
-import { menu } from '../../data';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import logo from '../../../public/logo.svg';
 import logoIcon from '../../../public/logo-icon.svg';
@@ -11,9 +10,16 @@ import ThemeIcon from '../../../public/theme-icon.svg';
 import navbarIcon from '../../../public/navbar-icon.svg';
 import styles from './sidebar.module.scss';
 
+interface MenuItem {
+  id: number;
+  title: string;
+  url: string;
+  icon: string;
+}
+
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
-
+  const [menu, setMenu] = useState<MenuItem[]>([]);
   const pathname = usePathname();
   const cx = (...classNames: string[]) => classNames.join(' ');
 
@@ -21,7 +27,11 @@ export default function Sidebar() {
     document.body.style.overflow =
       document.body.style.overflow === 'hidden' ? 'visible' : 'hidden';
   };
-
+  useEffect(() => {
+    fetch('http://localhost:4000/Menu')
+      .then((response) => response.json())
+      .then((json) => setMenu(json));
+  }, []);
   return (
     <>
       <aside

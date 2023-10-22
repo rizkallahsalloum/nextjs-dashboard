@@ -6,7 +6,7 @@ export default function PaymentAndTransactions() {
   return (
     <>
       <div className={styles.payment__transactions}>
-        <h3 className={styles.component__title}>Payment and Transactions</h3>
+        <h3 className="component__title">Payment and Transactions</h3>
         <div className={styles.payment__transactions_list}>
           <div className={styles.payment__transactions_list_item}>
             <figure>
