@@ -1,6 +1,11 @@
 import styles from './customTooltip.module.scss';
 
-export default function CustomTooltip({ text, children }) {
+interface Props {
+  text: string;
+  children: React.ReactNode;
+}
+
+export default function CustomTooltip({ text, children }: Props) {
   return (
     <div className={styles.tooltip_container}>
       {children}

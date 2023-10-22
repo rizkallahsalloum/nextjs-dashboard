@@ -13,10 +13,6 @@ import {
 import styles from './lineCharts.module.scss';
 import Link from 'next/link';
 
-// type Props = {
-//   name: string;
-//   tasks: number;
-// };
 const data = [
   {
     name: 'Jan',
@@ -50,18 +46,35 @@ interface LinChartsProps {
 const CustomTooltip = ({ active, payload }: any) => {
   if (active && payload && payload.length) {
     const data = payload[0].payload;
-    const valueKey = Object.keys(data).find((key) => key !== 'name');
-    const value = data[valueKey];
+    let valueKey = Object.keys(data).find((key) => key !== 'name');
 
-    return (
-      <div className={styles.custom_tooltip}>
-        <p className={styles.custom_tooltip_label}>
-          {value} {valueKey}
-        </p>
-      </div>
-    );
+    if (valueKey) {
+      // Check if valueKey is defined
+      const value = data[valueKey];
+
+      return (
+        <div className={styles.custom_tooltip}>
+          <p className={styles.custom_tooltip_label}>
+            {value} {valueKey}
+          </p>
+        </div>
+      );
+    }
   }
-  return null;
+  // if (active && payload && payload.length) {
+  //   const data = payload[0].payload;
+  //   let valueKey = Object.keys(data).find((key) => key !== 'name');
+  //   const value = data[valueKey];
+
+  //   return (
+  //     <div className={styles.custom_tooltip}>
+  //       <p className={styles.custom_tooltip_label}>
+  //         {value} {valueKey}
+  //       </p>
+  //     </div>
+  //   );
+  // }
+  // return null;
 };
 
 const highestTask = data.reduce((max, obj) => Math.max(max, obj.tasks), 0);
