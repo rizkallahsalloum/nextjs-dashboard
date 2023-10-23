@@ -5,13 +5,14 @@ import styles from './tasks.module.scss';
 
 interface TaskProps {
   task: {
-    id: number;
+    id: string;
     text: string;
     isCompleted: boolean;
   };
   onToggle: () => void;
   onDelete: () => void;
 }
+
 const Task: React.FC<TaskProps> = ({ task, onToggle, onDelete }) => {
   const [isChecked, setIsChecked] = useState(false);
 

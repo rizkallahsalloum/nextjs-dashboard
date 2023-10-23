@@ -1,63 +1,68 @@
 'use client';
+import {
+  collection,
+  addDoc,
+  getDocs,
+  deleteDoc,
+  doc,
+  updateDoc,
+  query,
+} from 'firebase/firestore';
+import { db } from '../../firebase';
 import React, { useEffect, useState, useRef } from 'react';
 import Task from './Task';
 import styles from './tasks.module.scss';
 
 interface TaskItem {
-  id: number;
+  id: string;
   text: string;
   isCompleted: boolean;
 }
 
 const TaskList: React.FC = () => {
   const [tasks, setTasks] = useState<TaskItem[]>([]);
-  const [newTask, setNewTask] = useState(''); // Load tasks from localStorage on page load
-
-  const initialRender = useRef(true);
+  const [newTask, setNewTask] = useState('');
 
   useEffect(() => {
-    const storedTasks = localStorage.getItem('tasks');
-    if (storedTasks) {
-      const parsedTasks = JSON.parse(storedTasks);
+    const loadTasks = async () => {
+      const tasksCol = collection(db, 'tasks');
+      const tasksSnapshot = await getDocs(tasksCol);
+      const tasksList = tasksSnapshot.docs.map(
+        (doc) => ({ id: doc.id, ...doc.data() } as TaskItem)
+      );
+      setTasks(tasksList);
+    };
 
-      setTasks(parsedTasks); // Set tasks with the loaded data
-    } else {
-      setTasks([]); // Initialize the state with an empty array when no tasks are in local storage
-    }
-  }, []); // Save tasks to localStorage whenever a task is added or deleted
+    loadTasks();
+  }, []);
 
-  useEffect(() => {
-    if (initialRender.current) {
-      initialRender.current = false;
-      return;
-    }
-    window.localStorage.setItem('tasks', JSON.stringify(tasks));
-  }, [tasks]);
-
-  const addTask = (e: any) => {
+  const addTask = async (e: any) => {
     e.preventDefault();
+
     if (newTask.trim() === '') return;
-    setTasks([
-      ...tasks,
-      {
-        id: Date.now(),
-        text: newTask,
-        isCompleted: false,
-      },
-    ]);
+
+    const taskItem = {
+      text: newTask,
+      isCompleted: false,
+    };
+
+    const docRef = await addDoc(collection(db, 'tasks'), taskItem);
+    setTasks([...tasks, { id: docRef.id, ...taskItem }]);
     setNewTask('');
   };
 
-  const deleteTask = (taskId: number) => {
-    const updatedTasks = tasks.filter((task) => task.id !== taskId);
-    setTasks(updatedTasks);
+  const deleteTask = async (taskId: string) => {
+    await deleteDoc(doc(db, 'tasks', taskId));
+    setTasks(tasks.filter((task) => task.id !== taskId));
   };
 
-  const toggleTask = (taskId: number) => {
-    const updatedTasks = tasks.map((task) =>
-      task.id === taskId ? { ...task, isCompleted: !task.isCompleted } : task
-    );
-    setTasks(updatedTasks);
+  const toggleTask = async (taskId: string) => {
+    const task = tasks.find((task) => task.id === taskId);
+    if (!task) return;
+
+    const updatedTask = { ...task, isCompleted: !task.isCompleted };
+    await updateDoc(doc(db, 'tasks', taskId), updatedTask);
+    setTasks(tasks.map((task) => (task.id === taskId ? updatedTask : task)));
   };
 
   return (
