@@ -7,10 +7,13 @@ const nextConfig = {
   images: {
     domains: ['images.unsplash.com', 'images.pexels.com'],
   },
-  // sassOptions: {
-  //   includePaths: [path.join(__dirname, 'styles')],
-  //   sourceMap: true,
-  // },
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')],
+    sourceMap: true,
+  },
+  module.exports = {
+    optimizeFonts: false,
+}
   productionBrowserSourceMaps: true,
 };
 
