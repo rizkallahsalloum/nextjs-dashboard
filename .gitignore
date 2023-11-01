@@ -4,8 +4,10 @@
 /node_modules
 /.pnp
 .pnp.js
-/firebase.ts
-.firebase.ts
+/.firebase.ts
+firebase.*
+
+
 .gitignore
 
 # testing

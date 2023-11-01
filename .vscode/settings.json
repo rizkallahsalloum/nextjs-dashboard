@@ -8,5 +8,6 @@
     "titleBar.activeForeground": "#F2FDEC"
   },
   "editor.fontFamily": "Dank Mono",
-  "editor.fontVariations": false
+  "editor.fontVariations": false,
+  "cSpell.words": ["subcollection"]
 }

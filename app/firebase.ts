@@ -1,16 +1,24 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
-import { getAnalytics } from 'firebase/analytics';
+import {
+  getFirestore,
+  doc,
+  getDoc,
+  collection,
+  getDocs,
+} from 'firebase/firestore';
+import { getDatabase } from 'firebase/database';
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-
-import { getFirestore } from 'firebase/firestore';
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: 'AIzaSyDV1-aDSl3_RMMVbDpqj4-6wFfUjLrXaF4',
   authDomain: 'nextjs-dashboard-fe729.firebaseapp.com',
+  // databaseURl:
+  //   'https://nextjs-dashboard-fe729-default-rtdb.europe-west1.firebasedatabase.app/',
   projectId: 'nextjs-dashboard-fe729',
   storageBucket: 'nextjs-dashboard-fe729.appspot.com',
   messagingSenderId: '608027709227',
@@ -21,4 +29,6 @@ const firebaseConfig = {
 // Initialize Firebase
 
 const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+export { database };
 export const db = getFirestore(app);

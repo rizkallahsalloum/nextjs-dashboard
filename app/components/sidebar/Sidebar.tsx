@@ -1,8 +1,10 @@
 'use client';
-
+import { collection, getDocs, orderBy, query } from 'firebase/firestore';
+import { db } from '../../firebase';
+import { useState, useEffect } from 'react';
+import 'firebase/firestore';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import logo from '../../../public/logo.svg';
 import logoIcon from '../../../public/logo-icon.svg';
@@ -18,9 +20,18 @@ interface MenuItem {
   icon: string;
 }
 
+type DataItem = {
+  id: string;
+  title: string;
+  url: string;
+  icon: string;
+};
+
 export default function Sidebar() {
+  const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
+
   const [isOpen, setIsOpen] = useState(false);
-  const [menu, setMenu] = useState<MenuItem[]>([]);
+
   const pathname = usePathname();
   const cx = (...classNames: string[]) => classNames.join(' ');
 
@@ -28,11 +39,32 @@ export default function Sidebar() {
     document.body.style.overflow =
       document.body.style.overflow === 'hidden' ? 'visible' : 'hidden';
   };
+  const fetchDataFromFirestore = async () => {
+    const querySnapshot = await getDocs(
+      query(collection(db, 'menu'), orderBy('id'))
+    );
+    const data: MenuItem[] = [];
+    querySnapshot.forEach((doc) => {
+      const docData = doc.data();
+      data.push({
+        id: docData.id,
+        title: docData.title,
+        url: docData.url,
+        icon: docData.icon,
+      });
+    });
+    return data;
+  };
+
   useEffect(() => {
-    fetch('http://localhost:4000/Menu')
-      .then((response) => response.json())
-      .then((json) => setMenu(json));
+    async function fetchMenuData() {
+      const data = await fetchDataFromFirestore();
+      setMenuItems(data);
+    }
+
+    fetchMenuData();
   }, []);
+
   return (
     <>
       <aside
@@ -60,7 +92,7 @@ export default function Sidebar() {
           />
         </Link>
         <nav className={styles.sidebar__nav}>
-          {menu.map((item) => (
+          {menuItems.map((item) => (
             <Link
               href={item.url}
               onClick={() => setIsOpen(false)}
