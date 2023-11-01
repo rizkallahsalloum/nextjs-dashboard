@@ -1,0 +1,21 @@
+[
+  {
+    "totalProjectsCard": {
+      "color": "#23282d",
+      "icon": "/folder-icon.svg",
+      "title": "Total Projects",
+      "amount": "19",
+      "dataKey": "projects",
+      "percentage": 60,
+      "chartData": [
+        { "name": "Sun", "projects": 4 },
+        { "name": "Mon", "projects": 2 },
+        { "name": "Tue", "projects": 1 },
+        { "name": "Wed", "projects": 3 },
+        { "name": "Thu", "projects": 7 },
+        { "name": "Fri", "projects": 1 },
+        { "name": "Sat", "projects": 3 }
+      ]
+    }
+  }
+]

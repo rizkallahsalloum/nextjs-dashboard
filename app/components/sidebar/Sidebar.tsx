@@ -20,12 +20,12 @@ interface MenuItem {
   icon: string;
 }
 
-type DataItem = {
-  id: string;
-  title: string;
-  url: string;
-  icon: string;
-};
+// type DataItem = {
+//   id: string;
+//   title: string;
+//   url: string;
+//   icon: string;
+// };
 
 export default function Sidebar() {
   const [menuItems, setMenuItems] = useState<MenuItem[]>([]);

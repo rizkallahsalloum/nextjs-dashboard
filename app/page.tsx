@@ -12,11 +12,7 @@ export default function HomePage() {
     <section className="content">
       <div className="grid__container">
         <div className="component_1">
-          <UserCards {...data.Cards.TotalEarningsCard} />
-          <UserCards {...data.Cards.totalProjectsCard} />
-          <UserCards {...data.Cards.totalTasksCard} />
-          <UserCards {...data.Cards.totalClientsCard} />
-          {/* <UserCards {...data.Cards.totalExpensesCard} /> */}
+          <UserCards />
         </div>
         <div className="component_2">
           <div className="column-1">
