@@ -3,9 +3,6 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
-  module.exports = {
-    optimizeFonts: false,
-},
   reactStrictMode: true,
   images: {
     domains: ['images.unsplash.com', 'images.pexels.com'],
