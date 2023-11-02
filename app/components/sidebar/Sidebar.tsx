@@ -3,7 +3,7 @@ import { db } from '../../firebase';
 import 'firebase/firestore';
 import { collection, getDocs, orderBy, query } from '@firebase/firestore';
 
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
@@ -20,13 +20,6 @@ interface MenuItem {
   url: string;
   icon: string;
 }
-
-// type DataItem = {
-//   id: string;
-//   title: string;
-//   url: string;
-//   icon: string;
-// };
 
 export default function Sidebar() {
   const [menuItems, setMenuItems] = useState<MenuItem[]>([]);

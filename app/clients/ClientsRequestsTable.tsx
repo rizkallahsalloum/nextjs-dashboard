@@ -1,12 +1,20 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import {
+  DocumentData,
+  collection,
+  getDocs,
+  orderBy,
+  query,
+} from '@firebase/firestore';
+import { db } from '../firebase';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import styles from './clients.module.scss';
 import Link from 'next/link';
 
 interface Client {
-  id?: number | string;
+  id?: number;
   pageSize?: number;
   img?: string;
   name?: string;
@@ -20,17 +28,19 @@ type Comment = {
   tag: string;
   comment: string;
 };
+
 async function getRequests() {
-  const res = await fetch('http://localhost:4000/ClientsRequests', {
-    next: {
-      revalidate: 30,
-    },
-  });
-  return res.json();
+  const requestsCol = query(
+    collection(db, 'clients_requests'),
+    orderBy('id', 'desc')
+  );
+  const requestsSnapshot = await getDocs(requestsCol);
+  const requests = requestsSnapshot.docs.map((doc) => doc.data());
+  return requests;
 }
 
 export default function ClientsRequestsTable({ pageSize }: Client) {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<DocumentData[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const pathname = usePathname();
 
@@ -119,7 +129,7 @@ export default function ClientsRequestsTable({ pageSize }: Client) {
               <tr key={client.id}>
                 <td className={styles.flex}>
                   <Image
-                    src={client.img || 'default-image-url'}
+                    src={client.img || '/default-image-url'}
                     alt="Client Photo"
                     width={50}
                     height={50}

@@ -1,16 +1,10 @@
+'use client';
+import React, { useEffect, useState } from 'react';
+import { collection, getDocs, orderBy, query } from '@firebase/firestore';
+import { db } from '../../firebase';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './singleClient.module.scss';
-
-async function getRequest(id: number | string) {
-  const res = await fetch(`http://localhost:4000/ClientsRequests/${id}`, {
-    next: {
-      revalidate: 60,
-    },
-  });
-
-  return res.json();
-}
 
 interface SingleClientProps {
   params: {
@@ -23,8 +17,24 @@ interface Comment {
   comment: string;
 }
 
-async function SingleClient({ params }: SingleClientProps) {
-  const singleRequest = await getRequest(params.id);
+const SingleClient: React.FC<SingleClientProps> = ({ params }) => {
+  const [singleRequest, setSingleRequest] = useState<any>(null);
+
+  useEffect(() => {
+    const getRequests = async () => {
+      const requestsCol = collection(db, 'clients_requests');
+      const requestsSnapshot = await getDocs(requestsCol);
+      const requests = requestsSnapshot.docs.map((doc) => doc.data());
+      setSingleRequest(requests.find((request) => request.id === params.id));
+    };
+
+    getRequests();
+  }, [params.id]);
+
+  if (!singleRequest) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
       <header
@@ -84,6 +94,6 @@ async function SingleClient({ params }: SingleClientProps) {
       </div>
     </>
   );
-}
+};
 
 export default SingleClient;

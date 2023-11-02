@@ -1,7 +1,5 @@
+import React from 'react';
 import UserCards from './components/userCards/UserCards';
-import CompletedTasks from './components/completedTasks/CompletedTasks';
-import data from '../_data/db.json';
-
 import LineCharts from './components/lineCharts/LineCharts';
 import ClientsRequestsTable from './clients/ClientsRequestsTable';
 import BarChats from './components/barCharts/BarChats';
