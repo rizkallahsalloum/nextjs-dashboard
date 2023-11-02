@@ -1,9 +1,9 @@
 'use client';
-import { collection, getDocs, orderBy, query } from 'firebase/firestore';
 import { db } from '../../firebase';
+import 'firebase/firestore';
+import { collection, getDocs, orderBy, query } from 'firebase/firestore';
 
 import { useState, useEffect } from 'react';
-import 'firebase/firestore';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
