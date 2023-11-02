@@ -7,7 +7,7 @@ import {
   doc,
   updateDoc,
   query,
-} from 'firebase/firestore';
+} from '@firebase/firestore';
 import { db } from '../../firebase';
 import React, { useEffect, useState, useRef } from 'react';
 import Task from './Task';
