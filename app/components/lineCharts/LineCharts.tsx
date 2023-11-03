@@ -111,6 +111,7 @@ const LineCharts: React.FC<LinChartsProps> = ({ title }) => {
           <Line
             type="monotone"
             dataKey="tasks"
+            strokeWidth={3}
             stroke="hsl(165, 40%, 62%)"
             activeDot={{ r: 8 }}
             fill="#fff"
