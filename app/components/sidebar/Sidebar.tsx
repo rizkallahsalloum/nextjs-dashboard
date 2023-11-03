@@ -1,5 +1,5 @@
 'use client';
-import { db } from '../../firebase';
+import { db } from '../../../firebase';
 import 'firebase/firestore';
 import { collection, getDocs, orderBy, query } from '@firebase/firestore';
 
