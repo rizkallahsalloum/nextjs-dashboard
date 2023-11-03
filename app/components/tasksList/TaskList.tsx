@@ -9,7 +9,7 @@ import {
   query,
 } from '@firebase/firestore';
 import { db } from '../../../firebase';
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import Task from './Task';
 import styles from './tasks.module.scss';
 import Link from 'next/link';

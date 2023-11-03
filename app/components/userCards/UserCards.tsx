@@ -1,8 +1,7 @@
 'use client';
-import { collection, getDocs, orderBy, query } from '@firebase/firestore';
-
-import { db } from '../../../firebase';
 import React, { useState, useEffect } from 'react';
+import { collection, getDocs, query } from '@firebase/firestore';
+import { db } from '../../../firebase';
 import 'firebase/firestore';
 import Image from 'next/image';
 import styles from './usercards.module.scss';
