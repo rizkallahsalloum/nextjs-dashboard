@@ -1,35 +1,48 @@
 @import '../../styles/mixins';
 @import '../../styles/helpers';
 
-// Task styles
-.ballout {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  max-height: 240px;
-  overflow-y: auto;
-  position: relative;
-  &::-webkit-scrollbar {
-    width: 5px;
-    padding-left: 1rem;
-  }
-  &::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 25px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: #e6e6e6;
-    border-radius: 25px;
-  }
-}
 .tasks__wrapper {
   position: relative;
   height: 266px;
+
+  // Task styles
+  .tasks {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-height: 220px;
+    padding: 2rem 1rem 2rem 0;
+    overflow-y: auto;
+    position: relative;
+    &::-webkit-scrollbar {
+      width: 5px;
+      padding-left: 1rem;
+    }
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 25px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #e6e6e6;
+      border-radius: 25px;
+    }
+  }
+  .tasks__no_tasks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 230px;
+    p {
+      color: var(--clr-light-charcoal--gray);
+    }
+  }
 }
 .add__task {
   display: flex;
   justify-content: space-between;
-  bottom: -20px;
+  position: relative;
+  bottom: -1rem;
+
   input {
     margin-left: 2rem;
     padding-block: 1rem;
@@ -51,6 +64,13 @@
       transition: 0.2s ease-out 0.2s;
     }
   }
+}
+.add_new_task_btn {
+  @extend %link__btn;
+  position: fixed;
+  bottom: 3rem;
+  z-index: 200;
+  right: 1rem;
 }
 
 //  Task list styles

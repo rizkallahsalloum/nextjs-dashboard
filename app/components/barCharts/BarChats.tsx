@@ -67,7 +67,7 @@ const longestHours = data.reduce((max, obj) => Math.max(max, obj.pv), 0);
 const BarChats: React.FC<BarChatsProps> = ({ title }) => {
   return (
     <div className={styles.bar__charts}>
-      <div className={styles.display__flex}>
+      <div className={`${styles.display__flex} ${styles.flex__center}`}>
         <h3 className="component__title">{title}</h3>
         <Link href={'/productivity'} className={styles.bar__charts_link}>
           Open

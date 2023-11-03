@@ -81,7 +81,7 @@ const highestTask = data.reduce((max, obj) => Math.max(max, obj.tasks), 0);
 const LineCharts: React.FC<LinChartsProps> = ({ title }) => {
   return (
     <div className={styles.line__charts}>
-      <div className={styles.display__flex}>
+      <div className={`${styles.display__flex} ${styles.flex__center}`}>
         <h3 className="component__title">{title}</h3>
         <Link href={'/tasks'} className={styles.line__charts_link}>
           Open
