@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "firebase": ["node_modules/firebase/dist/index.cjs"]
+    },
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
@@ -21,12 +21,10 @@
       {
         "name": "next"
       }
-    ],
-    "paths": {
-      "@/*": [
-        "./*"
-      ]
-    }
+    ]
+    // "paths": {
+    //   "@/*": ["./*"]
+    // }
   },
   "include": [
     "next-env.d.ts",
@@ -35,7 +33,5 @@
     ".next/types/**/*.ts",
     "app/data._tss"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }
