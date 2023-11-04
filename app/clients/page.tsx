@@ -8,7 +8,7 @@ import {
   query,
   where,
 } from '@firebase/firestore';
-import { db } from '../../firebase';
+import { db } from '@../../firebase';
 import styles from './clients.module.scss';
 interface Comment {
   title: string;
