@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // experimental: {
-  //   appDir: true,
-  // },
+  experimental: {
+    appDir: true,
+  },
+  distDir: 'build',
   reactStrictMode: true,
   images: {
     domains: ['images.unsplash.com', 'images.pexels.com'],

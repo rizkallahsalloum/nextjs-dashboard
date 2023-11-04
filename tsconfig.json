@@ -1,14 +1,22 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
-    "baseUrl": ".",
+    "baseUrl": "./app",
     "paths": {
-      "firebase": ["node_modules/@firebase/app/dist/index.cjs.js"],
-      "@/components/*": ["./app/components*"]
+      "firebase": [
+        "node_modules/@firebase/app/dist/index.cjs.js"
+      ],
+      "@/components/*": [
+        "./app/components*"
+      ]
     },
     "noEmit": true,
     "esModuleInterop": true,
@@ -32,7 +40,10 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/data._tss"
+    "app/data._tss",
+    "build/types/**/*.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }
