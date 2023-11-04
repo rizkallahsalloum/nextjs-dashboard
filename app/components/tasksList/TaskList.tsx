@@ -7,8 +7,8 @@ import {
   doc,
   updateDoc,
   query,
-} from '@firebase/firestore';
-import { db } from '@../../../firebase';
+} from 'firebase/firestore';
+import db from '../../firebase';
 import React, { useEffect, useState } from 'react';
 import Task from './Task';
 import styles from './tasks.module.scss';
@@ -54,16 +54,18 @@ const TaskList: React.FC = () => {
 
   const deleteTask = async (taskId: string) => {
     await deleteDoc(doc(db, 'tasks', taskId));
-    setTasks(tasks.filter((task) => task.id !== taskId));
+    setTasks(tasks.filter((task: TaskItem) => task.id !== taskId));
   };
 
   const toggleTask = async (taskId: string) => {
-    const task = tasks.find((task) => task.id === taskId);
+    const task = tasks.find((task: TaskItem) => task.id === taskId);
     if (!task) return;
 
     const updatedTask = { ...task, isCompleted: !task.isCompleted };
     await updateDoc(doc(db, 'tasks', taskId), updatedTask);
-    setTasks(tasks.map((task) => (task.id === taskId ? updatedTask : task)));
+    setTasks(
+      tasks.map((task: TaskItem) => (task.id === taskId ? updatedTask : task))
+    );
   };
 
   const handleAddTaskButton = () => {

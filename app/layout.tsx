@@ -1,6 +1,7 @@
-import Sidebar from '@/app/components/sidebar/Sidebar';
+import Sidebar from 'app/components/sidebar/Sidebar';
 import './global.scss';
 import DashboardHeader from './components/dashboardHeader/DashboardHeader';
+import { primary_font_outfit, secondary_font_oswald } from './fonts';
 
 export const metadata = {
   title: 'Next JS 13 Dashboard',
@@ -12,7 +13,7 @@ export default function RootLayout({ children }: any) {
   return (
     <html lang="en">
       <body
-      // className={`${primary_font_outfit.variable} ${secondary_font_oswald.variable}`}
+        className={`${primary_font_outfit.variable} ${secondary_font_oswald.variable}`}
       >
         <div className="wrapper">
           <Sidebar />

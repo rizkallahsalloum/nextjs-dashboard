@@ -6,8 +6,8 @@ import {
   getDocs,
   orderBy,
   query,
-} from '@firebase/firestore';
-import { db } from '@../../firebase';
+} from 'firebase/firestore';
+import db from 'app/firebase';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import styles from './clients.module.scss';

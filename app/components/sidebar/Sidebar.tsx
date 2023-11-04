@@ -1,7 +1,7 @@
 'use client';
-import { db } from '../../../firebase';
+import db from '../../firebase';
 import 'firebase/firestore';
-import { collection, getDocs, orderBy, query } from '@firebase/firestore';
+import { collection, getDocs, orderBy, query } from 'firebase/firestore';
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -86,27 +86,29 @@ export default function Sidebar() {
           />
         </Link>
         <nav className={styles.sidebar__nav}>
-          {menuItems.map((item) => (
-            <Link
-              href={item.url}
-              onClick={() => setIsOpen(false)}
-              className={cx(
-                styles.sidebar__nav_link,
-                pathname === item.url ? 'active ' : ''
-              )}
-              key={item.id}
-            >
-              <figure>
-                <Image
-                  src={item.icon}
-                  alt={item.title}
-                  width={16}
-                  height={16}
-                />
-                <figcaption> {item.title}</figcaption>
-              </figure>
-            </Link>
-          ))}
+          {menuItems.map(
+            (item: { url: string; id: any; icon: any; title: any }) => (
+              <Link
+                href={item.url}
+                onClick={() => setIsOpen(false)}
+                className={cx(
+                  styles.sidebar__nav_link,
+                  pathname === item.url ? 'active ' : ''
+                )}
+                key={item.id}
+              >
+                <figure>
+                  <Image
+                    src={item.icon}
+                    alt={item.title}
+                    width={16}
+                    height={16}
+                  />
+                  <figcaption> {item.title}</figcaption>
+                </figure>
+              </Link>
+            )
+          )}
         </nav>
         <hr className={styles.sidebar__separator} />
         <nav className={styles.sidebar__nav_bottom}>
