@@ -8,7 +8,8 @@ import {
   updateDoc,
   query,
 } from 'firebase/firestore';
-import db from '../../firebase';
+
+import db from 'app/firebase';
 import React, { useEffect, useState } from 'react';
 import Task from './Task';
 import styles from './tasks.module.scss';
