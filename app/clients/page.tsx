@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import ClientsRequestsTable from './ClientsRequestsTable';
 import { collection, getDocs, orderBy, query, where } from 'firebase/firestore';
-import db from 'app/firebase';
+import db from '../firebase';
 import styles from './clients.module.scss';
 interface Comment {
   title: string;
