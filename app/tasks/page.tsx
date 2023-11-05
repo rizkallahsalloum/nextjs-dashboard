@@ -1,3 +1,4 @@
+import React from 'react';
 import TaskList from '../components/tasksList/TaskList';
 import Link from 'next/link';
 import styles from './tasks.module.scss';

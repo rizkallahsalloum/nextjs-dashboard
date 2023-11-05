@@ -81,6 +81,7 @@ const TaskList: React.FC = () => {
       clearTimeout(hideInputFieldTimer);
     };
   }, []);
+
   return (
     <>
       <div className={styles.tasks__wrapper}>
