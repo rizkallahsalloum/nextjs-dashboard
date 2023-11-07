@@ -109,6 +109,7 @@ const TaskList: React.FC = () => {
           style={{ display: isVisible ? 'flex' : 'none' }}
         >
           <input
+            className={styles.add__task_input}
             type="text"
             id="addTask"
             placeholder="Add a task"
