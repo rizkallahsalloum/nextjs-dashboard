@@ -1,4 +1,5 @@
 'use client';
+import { db } from '../firebaseConfig';
 import React, { useState, useEffect } from 'react';
 import {
   DocumentData,
@@ -7,7 +8,6 @@ import {
   orderBy,
   query,
 } from 'firebase/firestore';
-import { db } from '../firebase';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import styles from './clients.module.scss';
