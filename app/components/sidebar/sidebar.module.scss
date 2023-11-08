@@ -54,11 +54,10 @@
     z-index: 100;
   }
   &__nav {
-    font-family: 'Outfit', sans-serif;
+    font-family: var(--font-primary);
     font-size: 1.6rem;
     font-weight: 400;
     @extend %display__flex_column;
-    // padding-top: 11.5rem;
     a {
       text-decoration: none;
     }
@@ -145,7 +144,6 @@
 
 .sidebar__toggle {
   display: none;
-  // visibility: visible;
 
   @include respond(mobile) {
     width: 56px;
