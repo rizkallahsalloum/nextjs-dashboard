@@ -1,0 +1,50 @@
+@import '../../styles/helpers';
+@import '../../styles/mixins';
+.btn__dropdown {
+  height: inherit;
+}
+.btn__dropdown > button {
+  cursor: pointer;
+  border: none;
+}
+.dropdown_modal {
+  color: var(--clr-text);
+  transition: all 0.3s ease;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  transform-origin: top right;
+
+  &_open {
+    position: relative;
+    transform-origin: top right;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    transition-duration: 0.3s;
+    transition-property: all;
+    transition-timing-function: ease-in-out cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 500;
+    ul {
+      line-height: 2;
+      padding-block: 1rem;
+    }
+  }
+
+  &_content {
+    right: 0;
+    top: 1rem;
+    position: absolute;
+    z-index: 500;
+    width: max-content;
+    min-width: 200px;
+    padding: 2rem;
+    line-height: 2;
+    background-color: var(--clr-white);
+    box-shadow: 0px 4px 4px rgba(112, 144, 176, 0.08);
+    border-radius: 1.5rem;
+
+    &_title {
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--clr-light--gray);
+    }
+  }
+}

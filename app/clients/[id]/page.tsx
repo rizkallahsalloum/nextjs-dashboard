@@ -35,7 +35,6 @@ const SingleClient: React.FC<SingleClientProps> = ({ params }) => {
   if (!singleRequest) {
     return <div>Loading...</div>;
   }
-
   return (
     <>
       <header

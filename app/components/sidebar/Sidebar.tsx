@@ -28,7 +28,7 @@ export default function Sidebar() {
   const pathname = usePathname();
   const cx = (...classNames: string[]) => classNames.join(' ');
 
-  const handleToggle = (): any => {
+  const handleToggleSidebar = (): any => {
     document.body.style.overflow =
       document.body.style.overflow === 'hidden' ? 'visible' : 'hidden';
   };
@@ -136,7 +136,7 @@ export default function Sidebar() {
       <button
         onClick={() => {
           setIsOpen(!isOpen);
-          handleToggle();
+          handleToggleSidebar();
         }}
         className={styles.sidebar__toggle}
       >
