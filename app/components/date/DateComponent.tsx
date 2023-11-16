@@ -1,16 +1,26 @@
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import styles from './dateComponent.module.scss';
 import calendarIcon from '../../../public/calendar-2.svg';
 
-export default function DateComponent() {
-  const currDay = new Date().getDate();
-  const currMonth = new Date().toLocaleString([], {
-    month: 'short',
-  });
-  const currYear = new Date().getFullYear();
+interface DateProps {
+  className?: string;
+}
+
+const DateComponent: React.FC<DateProps> = ({ className = '' }) => {
+  const [currDay, setCurrDay] = useState<number | null>(null);
+  const [currMonth, setCurrMonth] = useState<string | null>(null);
+  // const [currYear, setCurrYear] = useState<number | null>(null);
+
+  useEffect(() => {
+    const currentDate = new Date();
+    setCurrDay(currentDate.getDate());
+    setCurrMonth(currentDate.toLocaleString([], { month: 'short' }));
+    // setCurrYear(currentDate.getFullYear());
+  }, []);
 
   return (
-    <div className={`${styles.date}`}>
+    <div className={`${styles.date} ${className}`}>
       <Image
         src={calendarIcon}
         alt="Search icon"
@@ -21,4 +31,6 @@ export default function DateComponent() {
       {currDay} {currMonth}
     </div>
   );
-}
+};
+
+export default DateComponent;
