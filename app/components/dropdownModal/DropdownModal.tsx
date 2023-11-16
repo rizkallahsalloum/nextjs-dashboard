@@ -10,7 +10,7 @@ interface Props {
   onClick?: () => void;
 }
 
-const DropdownModal = ({ title, children, trigger }: Props) => {
+const DropdownModal = ({ children, trigger }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const modalRef = useRef<HTMLDivElement | null>(null);
   const triggerRef = useRef<HTMLDivElement | null>(null);
