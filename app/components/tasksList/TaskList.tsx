@@ -106,7 +106,7 @@ const TaskList: React.FC = () => {
         <form
           onClick={addTask}
           className={styles.add__task}
-          style={{ display: isVisible ? 'flex' : 'none' }}
+          style={{ right: isVisible ? '-2rem' : '-150rem' }}
         >
           <input
             className={styles.add__task_input}

@@ -2,18 +2,18 @@
 @import '../../styles/helpers';
 
 .tasks__wrapper {
-  position: relative;
-  height: 266px;
+  width: 100%;
+  height: 100%;
 
   // Task styles
   .tasks {
     display: flex;
     flex-direction: column;
     height: 100%;
-    max-height: 220px;
-    padding: 2rem 1rem 2rem 0;
+    max-height: 280px;
+    padding: 2rem 1rem 0 0;
     overflow-y: auto;
-    position: relative;
+
     &::-webkit-scrollbar {
       width: 5px;
       padding-left: 1rem;
@@ -38,20 +38,37 @@
   }
 }
 .add__task {
+  width: 50%;
+  min-width: max-content;
+  background-color: var(--clr-light--gray);
+  box-shadow: 0px 4px 4px rgba(104, 103, 103, 0.25);
   display: flex;
-  justify-content: space-between;
-  position: relative;
-  bottom: -1rem;
+  justify-content: flex-start;
+  position: fixed;
+  bottom: 1.5rem;
+  z-index: 450;
+  right: -150rem;
+  padding: 2rem 5rem 2rem 2rem;
+  border-radius: 1rem;
+  transition-duration: 0.3s;
+  transition-property: all;
+  transition-timing-function: ease-in-out cubic-bezier(0.4, 0, 0.2, 1);
+  @include respond(desktop) {
+    width: 80%;
+  }
+  @include respond(mobile) {
+    width: 100%;
+  }
 
   input {
-    margin-left: 2rem;
+    margin-right: 2rem;
     padding-block: 1rem;
     text-indent: 2rem;
     background-color: var(--clr-white);
-    width: 70%;
+    width: 100%;
   }
   button {
-    background-color: var(--clr-charcoal--gray);
+    background-color: var(--clr-light-charcoal--gray);
     color: var(--clr-white);
     border: none;
     cursor: pointer;
@@ -69,7 +86,7 @@
   @extend %link__btn;
   position: fixed;
   bottom: 3rem;
-  z-index: 200;
+  z-index: 400;
   right: 1rem;
 }
 
@@ -79,6 +96,7 @@
     display: flex;
     align-items: flex-start;
     gap: 1rem;
+    padding: 0.5rem 0;
     label {
       display: flex;
       align-items: flex-start;
@@ -100,10 +118,13 @@
       margin-left: auto;
       cursor: pointer;
       margin-top: 0.3rem;
-      img:hover {
+      img {
         transition: 0.2s ease-out 0.2s;
         filter: brightness(0) saturate(100%) invert(61%) sepia(70%)
           saturate(3242%) hue-rotate(322deg) brightness(93%) contrast(104%);
+      }
+      img:hover {
+        transform: scale(1.3);
       }
     }
   }
