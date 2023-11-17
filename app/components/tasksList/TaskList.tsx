@@ -13,6 +13,7 @@ import React, { useEffect, useState } from 'react';
 import Task from './Task';
 import styles from './tasks.module.scss';
 import Link from 'next/link';
+import Image from 'next/image';
 interface TaskItem {
   id: string;
   text: string;
@@ -71,6 +72,9 @@ const TaskList: React.FC = () => {
   const handleAddTaskButton = () => {
     setIsVisible(true);
   };
+  const handleCloseTaskButton = () => {
+    setIsVisible(false);
+  };
 
   useEffect(() => {
     const hideInputFieldTimer = setTimeout(() => {
@@ -108,6 +112,15 @@ const TaskList: React.FC = () => {
           className={styles.add__task}
           style={{ right: isVisible ? '-2rem' : '-150rem' }}
         >
+          <button onClick={handleCloseTaskButton}>
+            {' '}
+            <Image
+              src="./arrow-right.svg"
+              alt="arrow "
+              width={15}
+              height={15}
+            />
+          </button>
           <input
             className={styles.add__task_input}
             type="text"

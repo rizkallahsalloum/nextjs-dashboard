@@ -61,14 +61,14 @@
   }
 
   input {
-    margin-right: 2rem;
+    margin: 0 2rem;
     padding-block: 1rem;
     text-indent: 2rem;
     background-color: var(--clr-white);
     width: 100%;
   }
   button {
-    background-color: var(--clr-light-charcoal--gray);
+    background-color: var(--clr-charcoal--gray);
     color: var(--clr-white);
     border: none;
     cursor: pointer;
