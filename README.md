@@ -1,3 +1,13 @@
+# Nextjs 13 Dashboard
+
+## Title: Dashboard
+
+### Description:
+
+A project I designed using Figma and developed using Nextjs 13 typescript and firebase and Sass.
+
+This project is still in process I will be adding new features.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
