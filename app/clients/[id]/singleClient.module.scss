@@ -15,6 +15,7 @@
     align-items: flex-start;
     flex-direction: column;
   }
+
   &_info {
     display: flex;
     justify-content: flex-start;
@@ -72,5 +73,14 @@
     border-top: 2px solid var(--clr-gray);
     text-align: center;
     margin: 1rem 0;
+  }
+}
+.link__btn_back {
+  margin-top: 2rem;
+  width: max-content;
+  border-radius: 1rem;
+  &::before {
+    content: ' < ';
+    margin-right: 1rem;
   }
 }

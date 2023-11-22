@@ -112,13 +112,16 @@ const TaskList: React.FC = () => {
           className={styles.add__task}
           style={{ right: isVisible ? '-2rem' : '-150rem' }}
         >
-          <button onClick={handleCloseTaskButton}>
+          <button
+            onClick={handleCloseTaskButton}
+            className={styles.toggle_task_btn}
+          >
             {' '}
             <Image
               src="./arrow-right.svg"
               alt="arrow "
-              width={15}
-              height={15}
+              width={20}
+              height={20}
             />
           </button>
           <input
@@ -131,8 +134,7 @@ const TaskList: React.FC = () => {
               setNewTask(e.target.value);
             }}
           />
-
-          <button type="submit">Submit</button>
+          <button type="submit">Submit Task</button>
         </form>
         <Link
           onClick={handleAddTaskButton}

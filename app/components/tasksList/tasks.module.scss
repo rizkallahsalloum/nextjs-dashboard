@@ -58,6 +58,9 @@
   }
   @include respond(mobile) {
     width: 100%;
+    flex-direction: column;
+    align-items: flex-end;
+    box-shadow: 0px -4px 4px rgba(104, 103, 103, 0.25);
   }
 
   input {
@@ -66,6 +69,12 @@
     text-indent: 2rem;
     background-color: var(--clr-white);
     width: 100%;
+    min-width: 50%;
+    @include respond(mobile) {
+      width: 100%;
+      margin-inline: 0;
+      margin-block: 2rem;
+    }
   }
   button {
     background-color: var(--clr-charcoal--gray);
@@ -74,11 +83,23 @@
     cursor: pointer;
     padding: 1rem 2rem;
     border-radius: 3rem;
+    width: 25%;
     &:hover {
       color: var(--clr-white);
       text-decoration: none;
       background-color: var(--clr-green);
       transition: 0.2s ease-out 0.2s;
+    }
+    @include respond(mobile) {
+      width: 50%;
+    }
+  }
+  .toggle_task_btn {
+    width: max-content;
+    img {
+      filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%)
+        hue-rotate(108deg) brightness(104%) contrast(104%);
+      transform: scale(1.3);
     }
   }
 }

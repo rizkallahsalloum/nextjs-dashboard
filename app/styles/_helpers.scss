@@ -87,7 +87,9 @@
     transition: 0.2s ease-out 0.2s;
   }
 }
-
+.link__btn {
+  @extend %link__btn;
+}
 %component {
   background-color: var(--clr-light--gray);
   padding: calc(var(--spacer) * 3);

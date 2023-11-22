@@ -70,7 +70,12 @@ const SingleClient: React.FC<SingleClientProps> = ({ params }) => {
           </div>
         </div>
       </header>
-      <Link href="/clients">Back to Clients</Link>
+      <Link
+        href="/clients"
+        className={`${styles.link__btn} ${styles.link__btn_back}`}
+      >
+        Back to Clients
+      </Link>
       <div className={styles.single__client_comments}>
         <div className={`${styles.single__client_comments_list}`}>
           {singleRequest.comments?.map((comment: Comment, index: number) => (
