@@ -41,6 +41,10 @@
     background-color: var(--clr-white);
     box-shadow: 0px 4px 4px rgba(112, 144, 176, 0.08);
     border-radius: 1.5rem;
+    @include respond(mobile) {
+      left: 0.5rem;
+      transform: translateX(-50%);
+    }
 
     &_title {
       padding-bottom: 1rem;
